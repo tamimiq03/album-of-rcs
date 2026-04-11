@@ -1,0 +1,1433 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Album of RCS | Rajshahi Collegiate School</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <!-- Chrome Tab Favicon PNG -->
+    <link rel="icon" type="image/png" href="logo.png" />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="https://upload.wikimedia.org/wikipedia/en/thumb/7/7f/Rajshahi_Collegiate_School_logo.png/200px-Rajshahi_Collegiate_School_logo.png"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background: #ffffff;
+        color: #1a1a2e;
+        scroll-behavior: smooth;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      #app {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .main-content {
+        flex: 1;
+      }
+
+      :root {
+        --rcs-red: #dc2626;
+        --rcs-red-dark: #b91c1c;
+        --rcs-red-light: #fee2e2;
+        --rcs-gray-50: #fafafa;
+        --rcs-gray-100: #f4f4f5;
+        --rcs-gray-200: #e4e4e7;
+        --rcs-gray-600: #52525b;
+        --rcs-gray-800: #27272a;
+        --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+        --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.05);
+        --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.08);
+        --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.12);
+        --transition: 0.25s ease;
+      }
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateX(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      .animate-up {
+        animation: fadeUp 0.6s ease forwards;
+      }
+      .animate-fade {
+        animation: fadeIn 0.4s ease forwards;
+      }
+      .animate-slide {
+        animation: slideIn 0.5s ease forwards;
+      }
+
+      .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      }
+      .nav-container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0.9rem 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      .logo h2 {
+        font-size: 1.5rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, #dc2626, #991b1b);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+      }
+      .nav-links a {
+        text-decoration: none;
+        font-weight: 500;
+        color: var(--rcs-gray-800);
+        transition: var(--transition);
+        font-size: 0.9rem;
+        position: relative;
+      }
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        bottom: -6px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--rcs-red);
+        transition: width 0.25s ease;
+      }
+      .nav-links a:hover::after,
+      .nav-links a.active::after {
+        width: 100%;
+      }
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: var(--rcs-red);
+      }
+      .menu-icon {
+        display: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--rcs-red);
+      }
+      @media (max-width: 780px) {
+        .nav-links {
+          display: none;
+          width: 100%;
+          flex-direction: column;
+          text-align: center;
+          padding: 1.2rem 0;
+          gap: 1rem;
+        }
+        .nav-links.show {
+          display: flex;
+        }
+        .menu-icon {
+          display: block;
+        }
+        .nav-container {
+          padding: 0.8rem 1.5rem;
+        }
+      }
+
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 2rem 2rem 3rem;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        background: var(--rcs-red);
+        color: white;
+        padding: 0.75rem 2rem;
+        border-radius: 50px;
+        font-weight: 500;
+        font-size: 0.9rem;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .btn:hover {
+        background: var(--rcs-red-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(220, 38, 38, 0.25);
+      }
+      .btn-sm {
+        padding: 0.4rem 1rem;
+        font-size: 0.8rem;
+        background: #22c55e;
+      }
+
+      .hero {
+        text-align: center;
+        padding: 2rem 1rem 3rem;
+      }
+      .hero-logo-img {
+        max-width: 140px;
+        margin: 0 auto 1rem;
+        display: block;
+      }
+      .hero-logo {
+        font-size: 3.5rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, #dc2626, #7f1d1d);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        margin-bottom: 0.5rem;
+      }
+      .hero-sub {
+        max-width: 650px;
+        margin: 1rem auto;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: var(--rcs-gray-600);
+      }
+
+      /* Improved Grid Gallery for PC */
+      .grid-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+      @media (min-width: 1024px) {
+        .grid-gallery {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+      @media (min-width: 768px) and (max-width: 1023px) {
+        .grid-gallery {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      @media (max-width: 767px) {
+        .grid-gallery {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 480px) {
+        .grid-gallery {
+          grid-template-columns: 1fr;
+        }
+      }
+      .card {
+        background: white;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: var(--shadow-md);
+        transition: all 0.3s ease;
+        border: 1px solid var(--rcs-gray-100);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      .card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-xl);
+      }
+      .card-img {
+        width: 100%;
+        height: 260px;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+      .card:hover .card-img {
+        transform: scale(1.03);
+      }
+      .teacher-info,
+      .caption {
+        padding: 1.2rem 1rem;
+        text-align: center;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .teacher-info h3 {
+        font-weight: 700;
+        font-size: 1.1rem;
+        margin-bottom: 0.4rem;
+        color: var(--rcs-gray-800);
+      }
+      .teacher-info p {
+        color: var(--rcs-gray-600);
+        font-size: 0.9rem;
+        margin: 4px 0;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+      }
+      .teacher-info p i {
+        width: 20px;
+        color: var(--rcs-red);
+        font-size: 0.9rem;
+      }
+
+      /* Notice board PC optimization */
+      .notice-card {
+        background: white;
+        border-radius: 20px;
+        padding: 1.5rem;
+        margin-bottom: 1.2rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 1px solid var(--rcs-gray-100);
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .notice-card:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-lg);
+      }
+      .notice-title {
+        font-weight: 700;
+        font-size: 1.1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      .notice-badge {
+        background: var(--rcs-red-light);
+        color: var(--rcs-red);
+        padding: 0.3rem 1rem;
+        border-radius: 30px;
+        font-size: 0.8rem;
+        font-weight: 500;
+      }
+      .notice-detail {
+        display: none;
+        margin-top: 1.2rem;
+        padding-top: 1.2rem;
+        border-top: 1px solid var(--rcs-gray-200);
+      }
+      .notice-detail.show {
+        display: block;
+        animation: fadeUp 0.3s ease;
+      }
+      .notice-detail p {
+        line-height: 1.7;
+        color: var(--rcs-gray-600);
+        margin-bottom: 1rem;
+      }
+      .notice-img {
+        max-width: 100%;
+        max-height: 400px;
+        border-radius: 16px;
+        margin-top: 0.8rem;
+        cursor: pointer;
+        box-shadow: var(--shadow-sm);
+      }
+      .click-hint {
+        display: inline-block;
+        margin-top: 0.8rem;
+        font-size: 0.75rem;
+        color: var(--rcs-red);
+        animation: pulse 1.5s ease infinite;
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 0.6;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+
+      .rating-card {
+        background: white;
+        border-radius: 20px;
+        padding: 1.5rem;
+        box-shadow: var(--shadow-sm);
+        border-left: 3px solid var(--rcs-red);
+        margin-bottom: 1rem;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .rating-card:hover {
+        transform: translateX(5px);
+      }
+
+      form input,
+      form textarea {
+        width: 100%;
+        padding: 12px 18px;
+        border-radius: 50px;
+        border: 1px solid var(--rcs-gray-200);
+        font-family: "Inter", sans-serif;
+        margin-bottom: 1rem;
+      }
+      form input:focus,
+      form textarea:focus {
+        outline: none;
+        border-color: var(--rcs-red);
+        box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+      }
+
+      .admin-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 1.5rem;
+      }
+      .admin-header {
+        background: linear-gradient(135deg, #1e1e2a, #2d2d3a);
+        border-radius: 28px;
+        padding: 1.5rem 2rem;
+        margin-bottom: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .admin-header h1 {
+        color: white;
+        font-size: 1.5rem;
+      }
+      .admin-logout {
+        background: rgba(255, 255, 255, 0.15);
+        color: white;
+        border: none;
+        padding: 0.6rem 1.5rem;
+        border-radius: 40px;
+        cursor: pointer;
+      }
+      .admin-logout:hover {
+        background: var(--rcs-red);
+      }
+      .admin-tabs {
+        display: flex;
+        gap: 0.8rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+      }
+      .admin-tab {
+        padding: 0.8rem 1.8rem;
+        background: white;
+        border: 1px solid var(--rcs-gray-200);
+        border-radius: 50px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: all 0.2s;
+      }
+      .admin-tab:hover {
+        border-color: var(--rcs-red);
+        background: var(--rcs-red-light);
+      }
+      .admin-tab.active {
+        background: var(--rcs-red);
+        color: white;
+      }
+      .admin-section {
+        display: none;
+        background: white;
+        border-radius: 28px;
+        padding: 2rem;
+        box-shadow: var(--shadow-lg);
+      }
+      .admin-section.active {
+        display: block;
+        animation: fadeUp 0.3s ease;
+      }
+      .admin-card {
+        background: var(--rcs-gray-50);
+        border-radius: 20px;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .item-card {
+        background: white;
+        padding: 0.8rem 1rem;
+        border-radius: 16px;
+        margin-bottom: 0.8rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        border: 1px solid var(--rcs-gray-200);
+      }
+      .edit-btn {
+        background: #3b82f6;
+        color: white;
+        border: none;
+        border-radius: 30px;
+        padding: 0.3rem 1rem;
+        cursor: pointer;
+        margin-right: 0.5rem;
+      }
+      .delete-btn {
+        background: #dc2626;
+        color: white;
+        border: none;
+        border-radius: 30px;
+        padding: 0.3rem 1rem;
+        cursor: pointer;
+      }
+      .edit-form {
+        background: white;
+        padding: 1rem;
+        border-radius: 16px;
+        margin-top: 0.8rem;
+        display: none;
+        border: 1px solid var(--rcs-gray-200);
+      }
+      .edit-form.show {
+        display: block;
+      }
+
+      .premium-footer {
+        background: linear-gradient(135deg, #0a0a0f, #14141c);
+        color: #a1a1aa;
+        padding: 2rem 2rem 1.5rem;
+        margin-top: auto;
+      }
+      .footer-content {
+        max-width: 1280px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+      }
+      .footer-brand h3 {
+        color: white;
+        font-size: 1.3rem;
+      }
+      .footer-brand p {
+        font-size: 0.85rem;
+        opacity: 0.7;
+      }
+      .footer-social {
+        display: flex;
+        gap: 1.5rem;
+      }
+      .footer-social a {
+        color: #a1a1aa;
+        font-size: 1.2rem;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.05);
+        transition: 0.2s;
+      }
+      .footer-social a:hover {
+        color: var(--rcs-red);
+        transform: translateY(-3px);
+      }
+      .footer-bottom {
+        text-align: center;
+        padding-top: 1.5rem;
+        margin-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        font-size: 0.9rem;
+      }
+      .footer-bottom a {
+        color: #dc2626;
+        text-decoration: none;
+        font-size: 1.1rem;
+        font-weight: 700;
+      }
+      .footer-bottom a:hover {
+        text-decoration: underline;
+      }
+
+      .login-card {
+        background: white;
+        border-radius: 32px;
+        padding: 2.5rem;
+        max-width: 450px;
+        margin: 3rem auto;
+        box-shadow: var(--shadow-xl);
+        text-align: center;
+      }
+      .image-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        z-index: 2000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        visibility: hidden;
+        opacity: 0;
+        cursor: pointer;
+      }
+      .image-modal.active {
+        visibility: visible;
+        opacity: 1;
+      }
+      .modal-img {
+        max-width: 90%;
+        max-height: 90%;
+        object-fit: contain;
+        border-radius: 12px;
+      }
+      .close-modal {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        color: white;
+        font-size: 40px;
+        cursor: pointer;
+      }
+
+      /* Section headers */
+      h1 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        color: var(--rcs-gray-800);
+      }
+      @media (max-width: 768px) {
+        .container {
+          padding: 1.5rem;
+        }
+        .hero-logo {
+          font-size: 2.5rem;
+        }
+        .footer-content {
+          flex-direction: column;
+          text-align: center;
+        }
+        h1 {
+          font-size: 1.8rem;
+        }
+      }
+
+      .copy-toast {
+        position: fixed;
+        bottom: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #22c55e;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 40px;
+        font-size: 0.8rem;
+        z-index: 9999;
+        animation: fadeUp 0.3s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script>
+      // ============ JSONBin.io CONFIGURATION ============
+      // 🔴 এখানে আপনার JSONBin.io থেকে পাওয়া BIN ID এবং API KEY বসান 🔴
+      const JSONBIN_CONFIG = {
+        BIN_ID: "69da4241856a68218921651d",
+        API_KEY: "$2a$10$lf0lsp.4DV/FKDYSJQppAu5I2pRk7pwAGPRq93GOBWrT7psKCGkyi",
+        BASE_URL: "https://api.jsonbin.io/v3/b",
+      };
+
+      const DEFAULT_DATA = {
+        teachers: [
+          {
+            id: "t1",
+            name: "আফিয়া আখতার",
+            designation: "সভাপতি",
+            phone: "+8801712345678",
+            photo:
+              "https://rcs.edu.bd/images/institution/secretary_image/1731602321.jpg",
+          },
+          {
+            id: "t2",
+            name: "মো: বাইরুল ইসলাম",
+            designation: "প্রধান শিক্ষক",
+            phone: "+8801712345679",
+            photo:
+              "https://rcs.edu.bd/images/institution/headmaster_image/1767187546.jpg",
+          },
+          {
+            id: "t3",
+            name: "Md. Abdur Razzaque",
+            designation: "Senior Teacher",
+            phone: "+8801712345680",
+            photo: "https://randomuser.me/api/portraits/men/42.jpg",
+          },
+          {
+            id: "t4",
+            name: "Professor Md. Shahjahan",
+            designation: "Department Head",
+            phone: "+8801712345681",
+            photo: "https://randomuser.me/api/portraits/men/55.jpg",
+          },
+          {
+            id: "t5",
+            name: "Mrs. Rowshan Ara Begum",
+            designation: "Assistant Teacher",
+            phone: "+8801712345682",
+            photo: "https://randomuser.me/api/portraits/women/44.jpg",
+          },
+        ],
+        notices: [
+          {
+            id: "n1",
+            title: "Annual Cultural Program 2026",
+            description:
+              "The annual cultural program will be held on March 15, 2026. All students are requested to participate.",
+            image: "https://picsum.photos/id/106/800/500",
+            date: "2026-03-01",
+          },
+          {
+            id: "n2",
+            title: "SSC Exam Preparation Camp",
+            description:
+              "Special preparation camp for SSC examinees starts from April 1st.",
+            image: "",
+            date: "2026-02-28",
+          },
+        ],
+        gallery: [
+          {
+            id: "g1",
+            url: "https://picsum.photos/id/20/500/350",
+            title: "Annual Sports Celebration",
+          },
+          {
+            id: "g2",
+            url: "https://picsum.photos/id/26/500/350",
+            title: "Science Fair Exhibition",
+          },
+          {
+            id: "g3",
+            url: "https://picsum.photos/id/30/500/350",
+            title: "Classroom Chronicles",
+          },
+          {
+            id: "g4",
+            url: "https://picsum.photos/id/44/500/350",
+            title: "Teachers' Day Tribute",
+          },
+        ],
+        ratings: [],
+        homeContent:
+          "Album of RCS is a student-driven platform where students share school memories, entertainment content, and nostalgic moments of Rajshahi Collegiate School.",
+        aboutContent:
+          "Rajshahi Collegiate School, established in 1828, stands as one of the oldest and most prestigious institutions in Bangladesh. Located in the heart of Rajshahi city, the school carries a legacy of academic brilliance, cultural heritage, and timeless camaraderie.",
+        footerContent: "Album of RCS — preserving school memories since 2025",
+      };
+
+      let globalData = { teachers: [], notices: [], gallery: [], ratings: [] };
+      let homeContent = "",
+        aboutContent = "",
+        footerContent = "";
+      let isLoading = true;
+
+      async function fetchFromCloud() {
+        if (JSONBIN_CONFIG.BIN_ID === "YOUR_BIN_ID_HERE") return null;
+        try {
+          const response = await fetch(
+            `${JSONBIN_CONFIG.BASE_URL}/${JSONBIN_CONFIG.BIN_ID}/latest`,
+            {
+              headers: { "X-Master-Key": JSONBIN_CONFIG.API_KEY },
+            },
+          );
+          if (response.ok) {
+            const data = await response.json();
+            return data.record;
+          }
+          return null;
+        } catch (error) {
+          return null;
+        }
+      }
+
+      async function saveToCloud(data) {
+        if (JSONBIN_CONFIG.BIN_ID === "YOUR_BIN_ID_HERE") return false;
+        try {
+          const response = await fetch(
+            `${JSONBIN_CONFIG.BASE_URL}/${JSONBIN_CONFIG.BIN_ID}`,
+            {
+              method: "PUT",
+              headers: {
+                "Content-Type": "application/json",
+                "X-Master-Key": JSONBIN_CONFIG.API_KEY,
+              },
+              body: JSON.stringify(data),
+            },
+          );
+          return response.ok;
+        } catch (error) {
+          return false;
+        }
+      }
+
+      async function initData() {
+        isLoading = true;
+        render();
+        const cloudData = await fetchFromCloud();
+        if (cloudData && cloudData.teachers) {
+          globalData.teachers = cloudData.teachers;
+          globalData.notices = cloudData.notices;
+          globalData.gallery = cloudData.gallery;
+          globalData.ratings = cloudData.ratings || [];
+          homeContent = cloudData.homeContent;
+          aboutContent = cloudData.aboutContent;
+          footerContent = cloudData.footerContent;
+        } else {
+          globalData.teachers = [...DEFAULT_DATA.teachers];
+          globalData.notices = [...DEFAULT_DATA.notices];
+          globalData.gallery = [...DEFAULT_DATA.gallery];
+          globalData.ratings = [];
+          homeContent = DEFAULT_DATA.homeContent;
+          aboutContent = DEFAULT_DATA.aboutContent;
+          footerContent = DEFAULT_DATA.footerContent;
+          await saveToCloud(DEFAULT_DATA);
+        }
+        isLoading = false;
+        render();
+      }
+
+      let autoSaveTimer = null;
+      async function autoSync() {
+        if (autoSaveTimer) clearTimeout(autoSaveTimer);
+        autoSaveTimer = setTimeout(async () => {
+          await saveToCloud({
+            teachers: globalData.teachers,
+            notices: globalData.notices,
+            gallery: globalData.gallery,
+            ratings: globalData.ratings,
+            homeContent,
+            aboutContent,
+            footerContent,
+            lastUpdated: new Date().toISOString(),
+          });
+        }, 2000);
+      }
+
+      function generateId() {
+        return (
+          Date.now().toString(36) + Math.random().toString(36).substr(2, 8)
+        );
+      }
+      function addTeacher(data) {
+        globalData.teachers.unshift({ id: generateId(), ...data });
+        render();
+        autoSync();
+      }
+      function updateTeacher(id, data) {
+        let idx = globalData.teachers.findIndex((t) => t.id === id);
+        if (idx !== -1) {
+          globalData.teachers[idx] = { ...globalData.teachers[idx], ...data };
+          render();
+          autoSync();
+        }
+      }
+      function deleteTeacher(id) {
+        globalData.teachers = globalData.teachers.filter((t) => t.id !== id);
+        render();
+        autoSync();
+      }
+      function addNotice(data) {
+        globalData.notices.unshift({ id: generateId(), ...data });
+        render();
+        autoSync();
+      }
+      function updateNotice(id, data) {
+        let idx = globalData.notices.findIndex((n) => n.id === id);
+        if (idx !== -1) {
+          globalData.notices[idx] = { ...globalData.notices[idx], ...data };
+          render();
+          autoSync();
+        }
+      }
+      function deleteNotice(id) {
+        globalData.notices = globalData.notices.filter((n) => n.id !== id);
+        render();
+        autoSync();
+      }
+      function addGalleryItem(data) {
+        globalData.gallery.unshift({ id: generateId(), ...data });
+        render();
+        autoSync();
+      }
+      function updateGalleryItem(id, data) {
+        let idx = globalData.gallery.findIndex((g) => g.id === id);
+        if (idx !== -1) {
+          globalData.gallery[idx] = { ...globalData.gallery[idx], ...data };
+          render();
+          autoSync();
+        }
+      }
+      function deleteGalleryItem(id) {
+        globalData.gallery = globalData.gallery.filter((g) => g.id !== id);
+        render();
+        autoSync();
+      }
+      function addRating(data) {
+        globalData.ratings.unshift({
+          id: generateId(),
+          createdAt: new Date().toISOString(),
+          ...data,
+        });
+        render();
+        autoSync();
+      }
+      function deleteRating(id) {
+        globalData.ratings = globalData.ratings.filter((r) => r.id !== id);
+        render();
+        autoSync();
+      }
+      function deleteAllRatings() {
+        globalData.ratings = [];
+        render();
+        autoSync();
+      }
+      function setHomeContent(value) {
+        homeContent = value;
+        render();
+        autoSync();
+      }
+      function setAboutContent(value) {
+        aboutContent = value;
+        render();
+        autoSync();
+      }
+      function setFooterContent(value) {
+        footerContent = value;
+        render();
+        autoSync();
+      }
+
+      function copyToClipboard(text) {
+        navigator.clipboard.writeText(text);
+        let toast = document.createElement("div");
+        toast.className = "copy-toast";
+        toast.innerHTML = `<i class="fas fa-check-circle"></i> ${text} copied!`;
+        document.body.appendChild(toast);
+        setTimeout(() => toast.remove(), 2000);
+      }
+
+      const SECURITY = {
+        MAX_LOGIN_ATTEMPTS: 5,
+        LOCKOUT_DURATION: 15 * 60 * 1000,
+        SESSION_TIMEOUT: 30 * 60 * 1000,
+        VALID_EMAIL: "albumofrcs@gmail.com",
+        VALID_PASSWORD: "albumofrcs@12#",
+      };
+      function getLoginAttempts() {
+        let a = localStorage.getItem("login_attempts");
+        try {
+          return a ? JSON.parse(a) : { count: 0, lockoutUntil: 0 };
+        } catch (e) {
+          return { count: 0, lockoutUntil: 0 };
+        }
+      }
+      function saveLoginAttempts(a) {
+        localStorage.setItem("login_attempts", JSON.stringify(a));
+      }
+      function isAccountLocked() {
+        let a = getLoginAttempts();
+        if (a.lockoutUntil > Date.now())
+          return Math.ceil((a.lockoutUntil - Date.now()) / 60000);
+        return false;
+      }
+      function recordFailedAttempt() {
+        let a = getLoginAttempts();
+        a.count++;
+        if (a.count >= SECURITY.MAX_LOGIN_ATTEMPTS) {
+          a.lockoutUntil = Date.now() + SECURITY.LOCKOUT_DURATION;
+          a.count = 0;
+        }
+        saveLoginAttempts(a);
+        return a;
+      }
+      function resetLoginAttempts() {
+        saveLoginAttempts({ count: 0, lockoutUntil: 0 });
+      }
+      function getClientFingerprint() {
+        return (
+          navigator.userAgent +
+          "|" +
+          new Date().getTimezoneOffset() +
+          "|" +
+          (screen.width || "")
+        );
+      }
+      function simpleHash(str) {
+        let hash = 0;
+        for (let i = 0; i < str.length; i++) {
+          hash = (hash << 5) - hash + str.charCodeAt(i);
+          hash |= 0;
+        }
+        return hash.toString(36);
+      }
+      function verifySession() {
+        let s = localStorage.getItem("admin_session");
+        if (!s) return false;
+        try {
+          let session = JSON.parse(s);
+          let fp = localStorage.getItem("admin_fingerprint");
+          if (session.expiresAt < Date.now()) return false;
+          if (fp !== simpleHash(getClientFingerprint())) return false;
+          return true;
+        } catch (e) {
+          return false;
+        }
+      }
+      function createSession() {
+        let session = {
+          createdAt: Date.now(),
+          expiresAt: Date.now() + SECURITY.SESSION_TIMEOUT,
+        };
+        localStorage.setItem("admin_session", JSON.stringify(session));
+        localStorage.setItem(
+          "admin_fingerprint",
+          simpleHash(getClientFingerprint()),
+        );
+        localStorage.setItem("admin_auth", "true");
+        return true;
+      }
+      function destroySession() {
+        localStorage.removeItem("admin_session");
+        localStorage.removeItem("admin_fingerprint");
+        localStorage.removeItem("admin_auth");
+      }
+      function checkAndExtendSession() {
+        let s = localStorage.getItem("admin_session");
+        if (!s) return false;
+        try {
+          let session = JSON.parse(s);
+          if (session.expiresAt < Date.now()) {
+            destroySession();
+            return false;
+          }
+          if (session.expiresAt - Date.now() > 5 * 60 * 1000) {
+            session.expiresAt = Date.now() + SECURITY.SESSION_TIMEOUT;
+            localStorage.setItem("admin_session", JSON.stringify(session));
+          }
+          return true;
+        } catch (e) {
+          return false;
+        }
+      }
+      let adminLogged = false,
+        sessionTimer = null;
+      function checkAdminSession() {
+        if (verifySession() && checkAndExtendSession()) {
+          adminLogged = true;
+          startSessionTimer();
+          return true;
+        } else {
+          adminLogged = false;
+          if (sessionTimer) clearInterval(sessionTimer);
+          return false;
+        }
+      }
+      function startSessionTimer() {
+        if (sessionTimer) clearInterval(sessionTimer);
+        sessionTimer = setInterval(() => {
+          if (adminLogged && currentRoute === "admin") {
+            if (!checkAndExtendSession()) {
+              adminLogged = false;
+              destroySession();
+              alert("Session expired. Please login again.");
+              navigate("home");
+            }
+          }
+        }, 60000);
+      }
+      checkAdminSession();
+      let currentRoute = window.location.hash.slice(1) || "home";
+      function navigate(route) {
+        currentRoute = route;
+        window.location.hash = route;
+        render();
+      }
+      window.addEventListener("hashchange", () => {
+        currentRoute = window.location.hash.slice(1) || "home";
+        render();
+      });
+      function fileToBase64(file) {
+        return new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = () => resolve(reader.result);
+          reader.onerror = reject;
+          reader.readAsDataURL(file);
+        });
+      }
+      function adminLogin(email, pass) {
+        let lockout = isAccountLocked();
+        if (lockout)
+          return {
+            success: false,
+            message: `Try again in ${lockout} minutes.`,
+          };
+        if (
+          email === SECURITY.VALID_EMAIL &&
+          pass === SECURITY.VALID_PASSWORD
+        ) {
+          resetLoginAttempts();
+          createSession();
+          adminLogged = true;
+          startSessionTimer();
+          return { success: true };
+        } else {
+          let attempts = recordFailedAttempt();
+          let remaining = SECURITY.MAX_LOGIN_ATTEMPTS - attempts.count;
+          if (remaining <= 0)
+            return {
+              success: false,
+              message: "Account locked for 15 minutes.",
+            };
+          return {
+            success: false,
+            message: `Invalid credentials. ${remaining} attempts remaining.`,
+          };
+        }
+      }
+      function adminLogout() {
+        destroySession();
+        adminLogged = false;
+        if (sessionTimer) clearInterval(sessionTimer);
+        navigate("home");
+        render();
+      }
+      function escapeHtml(str) {
+        return String(str).replace(/[&<>]/g, (m) =>
+          m === "&" ? "&amp;" : m === "<" ? "&lt;" : m === ">" ? "&gt;" : m,
+        );
+      }
+      function showFullImage(url) {
+        let modal = document.getElementById("imageModal");
+        let modalImg = document.getElementById("modalImage");
+        if (modal && modalImg) {
+          modalImg.src = url;
+          modal.classList.add("active");
+        }
+      }
+      function closeModal() {
+        document.getElementById("imageModal")?.classList.remove("active");
+      }
+
+      function renderHome() {
+        return `<div class="hero animate-up"><img class="hero-logo-img" src="logo.png" alt="RCS Logo"><div class="hero-logo">Album of RCS</div><p class="hero-sub">${escapeHtml(homeContent)}</p><div style="margin-top: 2rem;"><button class="btn" onclick="navigate('nostalgia')">Explore Memories <i class="fas fa-arrow-right"></i></button></div></div>`;
+      }
+      function renderAbout() {
+        return `<div class="animate-slide" style="min-height: 400px;"><h1 style="color: var(--rcs-red); margin-bottom: 1rem;">About Rajshahi Collegiate School</h1><div style="background: white; padding: 2rem; border-radius: 28px; line-height: 1.7;">${escapeHtml(aboutContent)}</div></div>`;
+      }
+      function renderNostalgia() {
+        return `<div class="animate-fade"><h1 style="margin-bottom: 1.5rem;">Nostalgia Gallery</h1><div class="grid-gallery">${globalData.gallery.map((img) => `<div class="card"><img class="card-img" src="${img.url}" alt="${img.title}"><div class="caption"><strong>${escapeHtml(img.title)}</strong></div></div>`).join("")}</div></div>`;
+      }
+
+      function renderTeachers() {
+        return `<div class="animate-up"><h1 style="margin-bottom: 0.5rem;">Faculty & Mentors</h1><p style="color: var(--rcs-gray-600); margin-bottom: 2rem;">${globalData.teachers.length} dedicated teachers</p><div class="grid-gallery">${globalData.teachers.map((t) => `<div class="card"><img class="card-img" src="${t.photo}" alt="${t.name}" style="height: 260px; object-fit: cover;" onerror="this.src='https://randomuser.me/api/portraits/lego/1.jpg'"><div class="teacher-info"><h3>${escapeHtml(t.name)}</h3><p><i class="fas fa-user-tie"></i> ${escapeHtml(t.designation)}</p><p onclick="copyToClipboard('${t.phone}')" style="cursor: pointer;"><i class="fas fa-phone"></i> ${escapeHtml(t.phone || "N/A")} <span style="font-size:10px;">(click to copy)</span></p></div></div>`).join("")}</div></div>`;
+      }
+
+      function renderNotices() {
+        return `<div class="animate-up"><h1 style="margin-bottom: 0.5rem;">Notice Board</h1><p style="color: var(--rcs-gray-600); margin-bottom: 2rem;">Click on any notice to read full details</p>${globalData.notices.map((notice) => `<div class="notice-card" data-id="${notice.id}"><div class="notice-title"><span><i class="fas fa-bullhorn" style="color:var(--rcs-red); margin-right:8px;"></i>${escapeHtml(notice.title)}</span><span class="notice-badge"><i class="far fa-calendar-alt"></i> ${notice.date}</span></div><div class="notice-detail" id="detail-${notice.id}"><p>${escapeHtml(notice.description)}</p>${notice.image ? `<img src="${notice.image}" class="notice-img" onclick="event.stopPropagation(); showFullImage('${notice.image}')" alt="Notice Image"><div class="click-hint"><i class="fas fa-hand-point-right"></i> Click here to see more</div>` : ""}</div></div>`).join("")}</div>`;
+      }
+
+      function renderRatings() {
+        return `<div class="animate-up"><h1>Community Voices</h1><p style="color: var(--rcs-gray-600); margin-bottom: 1.5rem;">Share your journey and read memories</p><div style="background: var(--rcs-gray-50); border-radius: 28px; padding: 2rem; margin: 1.5rem auto; max-width: 800px;"><h3>Leave a Memory</h3><form id="reviewForm"><input type="text" id="revName" placeholder="Full name" required><input type="text" id="revSchool" placeholder="School" required><input type="text" id="revBatch" placeholder="SSC Batch"><input type="email" id="revEmail" placeholder="Email"><textarea rows="3" id="revReview" placeholder="Write your nostalgic memory..." required></textarea><button type="submit" class="btn">Share Memory <i class="fas fa-paper-plane"></i></button></form></div><h2>Recent Reflections</h2>${globalData.ratings.map((r) => `<div class="rating-card"><div><strong>${escapeHtml(r.name)}</strong> • Batch ${escapeHtml(r.batch || "—")} • ${escapeHtml(r.school)}</div><p>${escapeHtml(r.review)}</p><small>${new Date(r.createdAt).toLocaleDateString()}</small></div>`).join("") || '<div style="text-align:center; padding:2rem;">Be the first to share.</div>'}</div>`;
+      }
+
+      function renderAdmin() {
+        if (!adminLogged) {
+          let lockout = isAccountLocked();
+          return `<div class="animate-up"><div class="login-card"><h2><i class="fas fa-shield-alt" style="color:var(--rcs-red);"></i> Admin Login</h2><form id="adminLoginForm"><input type="email" id="adminEmail" placeholder="Email address" required><input type="password" id="adminPass" placeholder="Password" required><button type="submit" class="btn" style="width:100%;" ${lockout ? "disabled" : ""}>Login <i class="fas fa-arrow-right"></i></button></form><div id="loginError" class="error-message"></div></div></div>`;
+        }
+        return `<div class="admin-container animate-fade"><div class="admin-header"><h1><i class="fas fa-shield-alt" style="margin-right:10px;"></i>Admin Dashboard</h1><button class="admin-logout" id="logoutAdminBtn"><i class="fas fa-sign-out-alt"></i> Logout</button></div><div class="admin-tabs"><button class="admin-tab active" data-tab="home-tab">Home & About</button><button class="admin-tab" data-tab="teachers-tab">Teachers (${globalData.teachers.length})</button><button class="admin-tab" data-tab="notices-tab">Notices (${globalData.notices.length})</button><button class="admin-tab" data-tab="gallery-tab">Gallery (${globalData.gallery.length})</button><button class="admin-tab" data-tab="ratings-tab">Ratings (${globalData.ratings.length})</button><button class="admin-tab" data-tab="footer-tab">Footer</button></div><div id="home-tab" class="admin-section active"><div class="admin-card"><h3>Homepage Content</h3><textarea id="homeEditArea" rows="3" style="width:100%; border-radius:20px;">${escapeHtml(homeContent)}</textarea><button id="saveHomeBtn" class="btn" style="margin-top:1rem;">Update Home</button></div><div class="admin-card"><h3>About RCS Content</h3><textarea id="aboutEditArea" rows="5" style="width:100%; border-radius:20px;">${escapeHtml(aboutContent)}</textarea><button id="saveAboutBtn" class="btn">Update About</button></div></div><div id="teachers-tab" class="admin-section"><div class="admin-card"><h3>Add New Teacher</h3><button id="showAddTeacherForm" class="btn btn-sm" style="margin-bottom:1rem;">+ Show Form</button><div id="addTeacherForm" class="edit-form"><input type="text" id="teacherName" placeholder="Name"><input type="text" id="teacherDesignation" placeholder="Designation"><input type="text" id="teacherPhone" placeholder="Phone"><input type="text" id="teacherPhotoUrl" placeholder="Image URL"><input type="file" id="teacherPhotoUpload" accept="image/*"><button id="addTeacherBtn" class="btn">Save Teacher</button></div></div><div class="admin-card"><h3>Current Teachers (${globalData.teachers.length})</h3><div id="teacherList">${globalData.teachers.map((t) => `<div class="item-card"><div><strong>${escapeHtml(t.name)}</strong><br><small>${escapeHtml(t.designation)}</small></div><div><button class="edit-btn" onclick="editTeacher('${t.id}')">Edit</button><button class="delete-btn" onclick="deleteTeacherItem('${t.id}')">Delete</button></div></div><div id="edit-form-${t.id}" class="edit-form"><h4>Edit ${escapeHtml(t.name)}</h4><input type="text" id="edit-name-${t.id}" value="${escapeHtml(t.name)}"><input type="text" id="edit-designation-${t.id}" value="${escapeHtml(t.designation)}"><input type="text" id="edit-phone-${t.id}" value="${escapeHtml(t.phone || "")}"><input type="text" id="edit-photo-url-${t.id}" value="${escapeHtml(t.photo || "")}" placeholder="Image URL"><input type="file" id="edit-photo-file-${t.id}" accept="image/*"><button class="btn" onclick="updateTeacherItem('${t.id}')">Update</button></div>`).join("")}</div></div></div><div id="notices-tab" class="admin-section"><div class="admin-card"><h3>Add New Notice</h3><button id="showAddNoticeForm" class="btn btn-sm" style="margin-bottom:1rem;">+ Show Form</button><div id="addNoticeForm" class="edit-form"><input type="text" id="noticeTitle" placeholder="Title"><textarea id="noticeDesc" rows="2" placeholder="Description"></textarea><input type="file" id="noticeImage" accept="image/*"><input type="date" id="noticeDate"><button id="addNoticeBtn" class="btn">Save Notice</button></div></div><div class="admin-card"><h3>Current Notices</h3><div id="noticeList">${globalData.notices.map((n) => `<div class="item-card"><div><strong>${escapeHtml(n.title)}</strong><br><small>${n.date}</small></div><div><button class="edit-btn" onclick="editNotice('${n.id}')">Edit</button><button class="delete-btn" onclick="deleteNoticeItem('${n.id}')">Delete</button></div></div><div id="edit-notice-form-${n.id}" class="edit-form"><h4>Edit Notice</h4><input type="text" id="edit-notice-title-${n.id}" value="${escapeHtml(n.title)}"><textarea id="edit-notice-desc-${n.id}" rows="2">${escapeHtml(n.description)}</textarea><input type="file" id="edit-notice-image-${n.id}" accept="image/*"><input type="date" id="edit-notice-date-${n.id}" value="${n.date}"><button class="btn" onclick="updateNoticeItem('${n.id}')">Update</button></div>`).join("")}</div></div></div><div id="gallery-tab" class="admin-section"><div class="admin-card"><h3>Add New Image</h3><button id="showAddImageForm" class="btn btn-sm" style="margin-bottom:1rem;">+ Show Form</button><div id="addImageForm" class="edit-form"><input type="file" id="galleryFileUpload" accept="image/*"><input type="text" id="galleryTitle" placeholder="Image Title"><button id="addGalleryBtn" class="btn">Upload</button></div></div><div class="admin-card"><h3>Gallery Items</h3><div id="galleryList">${globalData.gallery.map((img) => `<div class="item-card"><div><img src="${img.url}" style="width:40px;height:40px;object-fit:cover;border-radius:8px;"> <strong>${escapeHtml(img.title)}</strong></div><div><button class="edit-btn" onclick="editGallery('${img.id}')">Edit</button><button class="delete-btn" onclick="deleteGalleryItemConfirm('${img.id}')">Delete</button></div></div><div id="edit-gallery-form-${img.id}" class="edit-form"><input type="text" id="edit-gallery-title-${img.id}" value="${escapeHtml(img.title)}"><button class="btn" onclick="updateGalleryItem('${img.id}')">Update Title</button></div>`).join("")}</div></div></div><div id="ratings-tab" class="admin-section"><div class="admin-card"><h3>Manage User Ratings (${globalData.ratings.length})</h3><div id="ratingsList">${globalData.ratings.map((r) => `<div class="item-card"><div><strong>${escapeHtml(r.name)}</strong>: ${escapeHtml(r.review.substring(0, 50))}${r.review.length > 50 ? "..." : ""}</div><button class="delete-btn" onclick="deleteRatingItem('${r.id}')">Delete</button></div>`).join("") || "<p>No ratings yet.</p>"}</div><button id="deleteAllRatingsBtn" class="btn" style="background:#b91c1c; margin-top:1rem;">Delete All Ratings</button></div></div><div id="footer-tab" class="admin-section"><div class="admin-card"><h3>Footer Text</h3><textarea id="footerEdit" rows="3" style="width:100%; border-radius:20px;">${escapeHtml(footerContent)}</textarea><button id="saveFooterBtn" class="btn" style="margin-top:1rem;">Update Footer</button></div></div></div>`;
+      }
+
+      function renderFooter() {
+        return `<footer class="premium-footer"><div class="footer-content"><div class="footer-brand"><h3>Album of RCS</h3><p>${escapeHtml(footerContent)}</p></div><div class="footer-social"><a href="mailto:albumofrcs@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a><a href="https://instagram.com/albumofrcs" target="_blank"><i class="fab fa-instagram"></i></a><a href="https://facebook.com/albumofrcs" target="_blank"><i class="fab fa-facebook-f"></i></a></div></div><div class="footer-bottom"><p>Website by <a href="https://instagram.com/tamimiq" target="_blank">Tamim Iqbal</a></p></div></footer>`;
+      }
+
+      window.copyToClipboard = copyToClipboard;
+      window.editTeacher = (id) => {
+        document.getElementById(`edit-form-${id}`)?.classList.toggle("show");
+      };
+      window.updateTeacherItem = async (id) => {
+        let name = document.getElementById(`edit-name-${id}`).value,
+          des = document.getElementById(`edit-designation-${id}`).value,
+          phone = document.getElementById(`edit-phone-${id}`).value,
+          url = document.getElementById(`edit-photo-url-${id}`).value,
+          file = document.getElementById(`edit-photo-file-${id}`).files[0],
+          photo = url;
+        if (file) photo = await fileToBase64(file);
+        updateTeacher(id, { name, designation: des, phone, photo });
+      };
+      window.deleteTeacherItem = (id) => {
+        if (confirm("Delete this teacher?")) deleteTeacher(id);
+      };
+      window.editNotice = (id) => {
+        document
+          .getElementById(`edit-notice-form-${id}`)
+          ?.classList.toggle("show");
+      };
+      window.updateNoticeItem = async (id) => {
+        let title = document.getElementById(`edit-notice-title-${id}`).value,
+          desc = document.getElementById(`edit-notice-desc-${id}`).value,
+          date = document.getElementById(`edit-notice-date-${id}`).value,
+          file = document.getElementById(`edit-notice-image-${id}`).files[0],
+          image = "";
+        if (file) image = await fileToBase64(file);
+        updateNotice(id, { title, description: desc, date, image });
+      };
+      window.deleteNoticeItem = (id) => {
+        if (confirm("Delete this notice?")) deleteNotice(id);
+      };
+      window.editGallery = (id) => {
+        document
+          .getElementById(`edit-gallery-form-${id}`)
+          ?.classList.toggle("show");
+      };
+      window.updateGalleryItem = async (id) => {
+        let title = document.getElementById(`edit-gallery-title-${id}`).value;
+        updateGalleryItem(id, { title });
+      };
+      window.deleteGalleryItemConfirm = (id) => {
+        if (confirm("Delete this image?")) deleteGalleryItem(id);
+      };
+      window.deleteRatingItem = (id) => {
+        if (confirm("Delete this rating?")) deleteRating(id);
+      };
+
+      function render() {
+        if (isLoading) {
+          document.getElementById("app").innerHTML =
+            `<div style="text-align:center; padding:4rem;"><i class="fas fa-spinner fa-pulse" style="font-size:2rem; color:var(--rcs-red);"></i><p style="margin-top:1rem;">Loading...</p></div>`;
+          return;
+        }
+        let mainContent = "";
+        if (currentRoute === "home") mainContent = renderHome();
+        else if (currentRoute === "about") mainContent = renderAbout();
+        else if (currentRoute === "nostalgia") mainContent = renderNostalgia();
+        else if (currentRoute === "teachers") mainContent = renderTeachers();
+        else if (currentRoute === "notices") mainContent = renderNotices();
+        else if (currentRoute === "ratings") mainContent = renderRatings();
+        else if (currentRoute === "admin") mainContent = renderAdmin();
+        else mainContent = renderHome();
+        const fullHTML = `<nav class="navbar"><div class="nav-container"><div class="logo"><h2>Album of RCS</h2></div><div class="menu-icon" id="menuToggle"><i class="fas fa-bars"></i></div><ul class="nav-links" id="navLinks"><li><a href="#" onclick="navigate('home');return false;">Home</a></li><li><a href="#" onclick="navigate('about');return false;">About</a></li><li><a href="#" onclick="navigate('nostalgia');return false;">Nostalgia</a></li><li><a href="#" onclick="navigate('teachers');return false;">Teachers</a></li><li><a href="#" onclick="navigate('notices');return false;">Notices</a></li><li><a href="#" onclick="navigate('ratings');return false;">Ratings</a></li></ul></div></nav><div class="container main-content">${mainContent}</div>${renderFooter()}<div id="imageModal" class="image-modal" onclick="closeModal()"><span class="close-modal">&times;</span><img id="modalImage" class="modal-img" src=""></div>`;
+        document.getElementById("app").innerHTML = fullHTML;
+        attachGlobalHandlers();
+        attachAdminHandlers();
+        attachNoticeToggle();
+        toggleMobileMenu();
+      }
+
+      function attachNoticeToggle() {
+        document.querySelectorAll(".notice-card").forEach((card) => {
+          card.addEventListener("click", (e) => {
+            if (e.target.classList.contains("notice-img")) return;
+            let detail = card.querySelector(".notice-detail");
+            if (detail) detail.classList.toggle("show");
+          });
+        });
+      }
+      function attachGlobalHandlers() {
+        let rf = document.getElementById("reviewForm");
+        if (rf) {
+          rf.onsubmit = (e) => {
+            e.preventDefault();
+            let name = document.getElementById("revName").value,
+              school = document.getElementById("revSchool").value,
+              batch = document.getElementById("revBatch").value,
+              email = document.getElementById("revEmail").value,
+              review = document.getElementById("revReview").value;
+            if (!name || !review) return alert("Name and review required.");
+            addRating({ name, school, batch, email, review });
+            rf.reset();
+          };
+        }
+        let alf = document.getElementById("adminLoginForm");
+        if (alf) {
+          alf.onsubmit = (e) => {
+            e.preventDefault();
+            let email = document.getElementById("adminEmail").value,
+              pass = document.getElementById("adminPass").value;
+            let result = adminLogin(email, pass);
+            if (result.success) render();
+            else
+              document.getElementById("loginError").textContent =
+                result.message;
+          };
+        }
+        let lob = document.getElementById("logoutAdminBtn");
+        if (lob) lob.onclick = () => adminLogout();
+      }
+      function attachAdminHandlers() {
+        if (!adminLogged) return;
+        document.querySelectorAll(".admin-tab").forEach((tab) => {
+          tab.addEventListener("click", (e) => {
+            e.preventDefault();
+            document
+              .querySelectorAll(".admin-tab")
+              .forEach((t) => t.classList.remove("active"));
+            tab.classList.add("active");
+            document
+              .querySelectorAll(".admin-section")
+              .forEach((s) => s.classList.remove("active"));
+            document.getElementById(tab.dataset.tab).classList.add("active");
+          });
+        });
+        document
+          .getElementById("saveHomeBtn")
+          ?.addEventListener("click", () => {
+            setHomeContent(document.getElementById("homeEditArea").value);
+          });
+        document
+          .getElementById("saveAboutBtn")
+          ?.addEventListener("click", () => {
+            setAboutContent(document.getElementById("aboutEditArea").value);
+          });
+        document
+          .getElementById("saveFooterBtn")
+          ?.addEventListener("click", () => {
+            setFooterContent(document.getElementById("footerEdit").value);
+          });
+        document
+          .getElementById("showAddTeacherForm")
+          ?.addEventListener("click", () => {
+            document.getElementById("addTeacherForm").classList.toggle("show");
+          });
+        document
+          .getElementById("addTeacherBtn")
+          ?.addEventListener("click", async () => {
+            let name = document.getElementById("teacherName").value,
+              des = document.getElementById("teacherDesignation").value,
+              phone = document.getElementById("teacherPhone").value,
+              url = document.getElementById("teacherPhotoUrl").value,
+              file = document.getElementById("teacherPhotoUpload").files[0],
+              photo = "https://randomuser.me/api/portraits/lego/1.jpg";
+            if (file) photo = await fileToBase64(file);
+            else if (url) photo = url;
+            addTeacher({ name, designation: des, phone, photo });
+            document.getElementById("addTeacherForm").classList.remove("show");
+            document.getElementById("teacherName").value = "";
+            document.getElementById("teacherDesignation").value = "";
+            document.getElementById("teacherPhone").value = "";
+            document.getElementById("teacherPhotoUrl").value = "";
+            document.getElementById("teacherPhotoUpload").value = "";
+          });
+        document
+          .getElementById("showAddNoticeForm")
+          ?.addEventListener("click", () => {
+            document.getElementById("addNoticeForm").classList.toggle("show");
+          });
+        document
+          .getElementById("addNoticeBtn")
+          ?.addEventListener("click", async () => {
+            let title = document.getElementById("noticeTitle").value,
+              desc = document.getElementById("noticeDesc").value,
+              date = document.getElementById("noticeDate").value,
+              file = document.getElementById("noticeImage").files[0],
+              image = "";
+            if (file) image = await fileToBase64(file);
+            addNotice({
+              title,
+              description: desc,
+              image,
+              date: date || new Date().toISOString().slice(0, 10),
+            });
+            document.getElementById("addNoticeForm").classList.remove("show");
+            document.getElementById("noticeTitle").value = "";
+            document.getElementById("noticeDesc").value = "";
+            document.getElementById("noticeImage").value = "";
+            document.getElementById("noticeDate").value = "";
+          });
+        document
+          .getElementById("showAddImageForm")
+          ?.addEventListener("click", () => {
+            document.getElementById("addImageForm").classList.toggle("show");
+          });
+        document
+          .getElementById("addGalleryBtn")
+          ?.addEventListener("click", async () => {
+            let file = document.getElementById("galleryFileUpload").files[0],
+              title = document.getElementById("galleryTitle").value;
+            if (!file) return alert("Select an image");
+            let url = await fileToBase64(file);
+            addGalleryItem({ url, title: title || "Memory" });
+            document.getElementById("addImageForm").classList.remove("show");
+            document.getElementById("galleryFileUpload").value = "";
+            document.getElementById("galleryTitle").value = "";
+          });
+        document
+          .getElementById("deleteAllRatingsBtn")
+          ?.addEventListener("click", async () => {
+            if (confirm("Delete all ratings?")) deleteAllRatings();
+          });
+      }
+      function toggleMobileMenu() {
+        let toggle = document.getElementById("menuToggle");
+        if (toggle)
+          toggle.onclick = () =>
+            document.getElementById("navLinks").classList.toggle("show");
+      }
+
+      initData();
+    </script>
+  </body>
+</html>
