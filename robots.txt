@@ -1,8 +1,3 @@
 User-agent: *
 Allow: /
-
-# Sitemap location
 Sitemap: https://albumofrcs.vercel.app/sitemap.xml
-
-# Admin page crawl করা থেকে বিরত রাখুন
-Disallow: /#/admin
