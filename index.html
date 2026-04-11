@@ -7,7 +7,10 @@
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
     <title>Album of RCS | Rajshahi Collegiate School</title>
-<meta name="google-site-verification" content="ODlN5SFN2K-4csTKNkbAkSArWtCNvamxlZt-YWp3LyQ" />
+    <meta
+      name="google-site-verification"
+      content="ODlN5SFN2K-4csTKNkbAkSArWtCNvamxlZt-YWp3LyQ"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
       rel="stylesheet"
@@ -19,11 +22,7 @@
 
     <!-- Chrome Tab Favicon PNG -->
     <link rel="icon" type="image/png" href="logo.png" />
-    <link
-      rel="shortcut icon"
-      type="image/png"
-      href="logo.png"
-    />
+    <link rel="shortcut icon" type="image/png" href="logo.png" />
 
     <style>
       * {
@@ -92,6 +91,37 @@
           transform: translateX(0);
         }
       }
+      @keyframes heartbeat {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes ripple {
+        0% {
+          width: 0;
+          height: 0;
+          opacity: 0.5;
+        }
+        100% {
+          width: 200px;
+          height: 200px;
+          opacity: 0;
+        }
+      }
       .animate-up {
         animation: fadeUp 0.6s ease forwards;
       }
@@ -100,6 +130,88 @@
       }
       .animate-slide {
         animation: slideIn 0.5s ease forwards;
+      }
+
+      /* Premium Loading Overlay */
+      .loading-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #0a0a0f, #1a1a2e);
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition:
+          opacity 0.5s ease,
+          visibility 0.5s ease;
+        opacity: 1;
+        visibility: visible;
+      }
+      .loading-overlay.hide {
+        opacity: 0;
+        visibility: hidden;
+      }
+      .loading-content {
+        text-align: center;
+        position: relative;
+      }
+      .loading-logo {
+        width: 120px;
+        height: 120px;
+        background: linear-gradient(135deg, #dc2626, #991b1b);
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 2rem;
+        animation: heartbeat 1.2s ease infinite;
+        box-shadow: 0 0 30px rgba(220, 38, 38, 0.3);
+      }
+      .loading-logo span {
+        font-size: 3rem;
+        font-weight: 800;
+        color: white;
+      }
+      .loading-text {
+        color: white;
+        font-size: 1.5rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        margin-bottom: 1rem;
+      }
+      .loading-sub {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.9rem;
+        margin-bottom: 2rem;
+      }
+      .loading-spinner {
+        width: 50px;
+        height: 50px;
+        border: 3px solid rgba(220, 38, 38, 0.2);
+        border-top: 3px solid #dc2626;
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+        margin: 0 auto;
+      }
+      .loading-ripple {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: rgba(220, 38, 38, 0.1);
+        animation: ripple 1.5s ease-out infinite;
+      }
+      .loading-ripple:nth-child(2) {
+        animation-delay: 0.5s;
+      }
+      .loading-ripple:nth-child(3) {
+        animation-delay: 1s;
       }
 
       .navbar {
@@ -681,13 +793,28 @@
   <body>
     <div id="app"></div>
 
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay">
+      <div class="loading-content">
+        <div class="loading-ripple"></div>
+        <div class="loading-ripple"></div>
+        <div class="loading-ripple"></div>
+        <div class="loading-logo">
+          <span>RCS</span>
+        </div>
+        <div class="loading-text">Album of RCS</div>
+        <div class="loading-sub">রাজশাহী কলেজিয়েট স্কুল</div>
+        <div class="loading-spinner"></div>
+      </div>
+    </div>
+
     <script>
-      // ============ JSONBin.io CONFIGURATION ============
-      // 🔴 এখানে আপনার JSONBin.io থেকে পাওয়া BIN ID এবং API KEY বসান 🔴
-      const JSONBIN_CONFIG = {
-        BIN_ID: "69da4241856a68218921651d",
-        API_KEY: "$2a$10$lf0lsp.4DV/FKDYSJQppAu5I2pRk7pwAGPRq93GOBWrT7psKCGkyi",
-        BASE_URL: "https://api.jsonbin.io/v3/b",
+      // ============ BACK4APP CONFIGURATION ============
+      // 🔴 এখানে আপনার Back4App থেকে পাওয়া APP ID এবং JS KEY বসান 🔴
+      const BACK4APP_CONFIG = {
+        APP_ID: "mDRco6RNMuofRW1zYxqEdRGkwH4cYQR3i8vlTofr", // Replace with your Back4App App ID
+        JS_KEY: "SA5uYQDHAVDh3zvUFPsw20ZlI9kkKxEXL4tFyZ9q", // Replace with your Back4App JavaScript Key
+        SERVER_URL: "https://parseapi.back4app.com/",
       };
 
       const DEFAULT_DATA = {
@@ -784,85 +911,164 @@
         footerContent = "";
       let isLoading = true;
 
-      async function fetchFromCloud() {
-        if (JSONBIN_CONFIG.BIN_ID === "YOUR_BIN_ID_HERE") return null;
-        try {
-          const response = await fetch(
-            `${JSONBIN_CONFIG.BASE_URL}/${JSONBIN_CONFIG.BIN_ID}/latest`,
-            {
-              headers: { "X-Master-Key": JSONBIN_CONFIG.API_KEY },
-            },
-          );
-          if (response.ok) {
-            const data = await response.json();
-            return data.record;
-          }
-          return null;
-        } catch (error) {
-          return null;
-        }
-      }
+      // Back4App initialization check
+      let back4appReady = false;
+      let Parse = null;
 
-      async function saveToCloud(data) {
-        if (JSONBIN_CONFIG.BIN_ID === "YOUR_BIN_ID_HERE") return false;
-        try {
-          const response = await fetch(
-            `${JSONBIN_CONFIG.BASE_URL}/${JSONBIN_CONFIG.BIN_ID}`,
-            {
-              method: "PUT",
-              headers: {
-                "Content-Type": "application/json",
-                "X-Master-Key": JSONBIN_CONFIG.API_KEY,
-              },
-              body: JSON.stringify(data),
-            },
-          );
-          return response.ok;
-        } catch (error) {
-          return false;
-        }
-      }
-
-      async function initData() {
-        isLoading = true;
-        render();
-        const cloudData = await fetchFromCloud();
-        if (cloudData && cloudData.teachers) {
-          globalData.teachers = cloudData.teachers;
-          globalData.notices = cloudData.notices;
-          globalData.gallery = cloudData.gallery;
-          globalData.ratings = cloudData.ratings || [];
-          homeContent = cloudData.homeContent;
-          aboutContent = cloudData.aboutContent;
-          footerContent = cloudData.footerContent;
+      function initBack4App() {
+        if (
+          BACK4APP_CONFIG.APP_ID !== "YOUR_BACK4APP_APP_ID" &&
+          BACK4APP_CONFIG.JS_KEY !== "YOUR_BACK4APP_JS_KEY"
+        ) {
+          // Load Parse SDK dynamically
+          const script = document.createElement("script");
+          script.src =
+            "https://cdn.parseplatform.org/parse-js-sdk/latest/parse.min.js";
+          script.onload = () => {
+            Parse = window.Parse;
+            Parse.initialize(BACK4APP_CONFIG.APP_ID, BACK4APP_CONFIG.JS_KEY);
+            Parse.serverURL = BACK4APP_CONFIG.SERVER_URL;
+            back4appReady = true;
+            console.log("Back4App initialized successfully");
+            loadDataFromBack4App();
+          };
+          script.onerror = () => {
+            console.warn("Back4App SDK failed to load, using localStorage");
+            loadLocalData();
+          };
+          document.head.appendChild(script);
         } else {
-          globalData.teachers = [...DEFAULT_DATA.teachers];
-          globalData.notices = [...DEFAULT_DATA.notices];
-          globalData.gallery = [...DEFAULT_DATA.gallery];
-          globalData.ratings = [];
-          homeContent = DEFAULT_DATA.homeContent;
-          aboutContent = DEFAULT_DATA.aboutContent;
-          footerContent = DEFAULT_DATA.footerContent;
-          await saveToCloud(DEFAULT_DATA);
+          console.log("Back4App keys not configured, using localStorage");
+          loadLocalData();
         }
+      }
+
+      async function loadDataFromBack4App() {
+        if (!back4appReady || !Parse) {
+          loadLocalData();
+          return;
+        }
+        try {
+          const query = new Parse.Query("RCSData");
+          const result = await query.first();
+          if (result) {
+            const data = result.toJSON();
+            if (data.teachers) globalData.teachers = data.teachers;
+            if (data.notices) globalData.notices = data.notices;
+            if (data.gallery) globalData.gallery = data.gallery;
+            if (data.ratings) globalData.ratings = data.ratings;
+            if (data.homeContent) homeContent = data.homeContent;
+            if (data.aboutContent) aboutContent = data.aboutContent;
+            if (data.footerContent) footerContent = data.footerContent;
+          } else {
+            useDefaultData();
+          }
+        } catch (error) {
+          console.warn("Back4App fetch failed, using localStorage", error);
+          loadLocalData();
+        }
+        finishLoading();
+      }
+
+      function useDefaultData() {
+        globalData.teachers = [...DEFAULT_DATA.teachers];
+        globalData.notices = [...DEFAULT_DATA.notices];
+        globalData.gallery = [...DEFAULT_DATA.gallery];
+        globalData.ratings = [];
+        homeContent = DEFAULT_DATA.homeContent;
+        aboutContent = DEFAULT_DATA.aboutContent;
+        footerContent = DEFAULT_DATA.footerContent;
+      }
+
+      function loadLocalData() {
+        const stored = localStorage.getItem("rcs_album_data_back4app");
+        if (stored) {
+          try {
+            const parsed = JSON.parse(stored);
+            globalData.teachers = parsed.teachers || [];
+            globalData.notices = parsed.notices || [];
+            globalData.gallery = parsed.gallery || [];
+            globalData.ratings = parsed.ratings || [];
+            homeContent = parsed.homeContent || DEFAULT_DATA.homeContent;
+            aboutContent = parsed.aboutContent || DEFAULT_DATA.aboutContent;
+            footerContent = parsed.footerContent || DEFAULT_DATA.footerContent;
+            if (globalData.teachers.length === 0)
+              globalData.teachers = [...DEFAULT_DATA.teachers];
+            if (globalData.notices.length === 0)
+              globalData.notices = [...DEFAULT_DATA.notices];
+            if (globalData.gallery.length === 0)
+              globalData.gallery = [...DEFAULT_DATA.gallery];
+          } catch (e) {
+            useDefaultData();
+          }
+        } else {
+          useDefaultData();
+        }
+        finishLoading();
+      }
+
+      async function saveToBack4App() {
+        if (!back4appReady || !Parse) {
+          saveLocalData();
+          return;
+        }
+        try {
+          const query = new Parse.Query("RCSData");
+          let obj = await query.first();
+          if (!obj) {
+            obj = new Parse.Object("RCSData");
+          }
+          obj.set("teachers", globalData.teachers);
+          obj.set("notices", globalData.notices);
+          obj.set("gallery", globalData.gallery);
+          obj.set("ratings", globalData.ratings);
+          obj.set("homeContent", homeContent);
+          obj.set("aboutContent", aboutContent);
+          obj.set("footerContent", footerContent);
+          obj.set("lastUpdated", new Date().toISOString());
+          await obj.save();
+          console.log("Saved to Back4App successfully");
+        } catch (error) {
+          console.warn("Back4App save failed, saving to localStorage", error);
+        }
+        saveLocalData();
+      }
+
+      function saveLocalData() {
+        const toStore = {
+          teachers: globalData.teachers,
+          notices: globalData.notices,
+          gallery: globalData.gallery,
+          ratings: globalData.ratings,
+          homeContent,
+          aboutContent,
+          footerContent,
+          lastUpdated: new Date().toISOString(),
+        };
+        localStorage.setItem(
+          "rcs_album_data_back4app",
+          JSON.stringify(toStore),
+        );
+      }
+
+      function finishLoading() {
         isLoading = false;
         render();
+        // Hide loading overlay with animation
+        const overlay = document.getElementById("loadingOverlay");
+        if (overlay) {
+          overlay.classList.add("hide");
+          setTimeout(() => {
+            overlay.style.display = "none";
+          }, 500);
+        }
       }
 
       let autoSaveTimer = null;
       async function autoSync() {
         if (autoSaveTimer) clearTimeout(autoSaveTimer);
         autoSaveTimer = setTimeout(async () => {
-          await saveToCloud({
-            teachers: globalData.teachers,
-            notices: globalData.notices,
-            gallery: globalData.gallery,
-            ratings: globalData.ratings,
-            homeContent,
-            aboutContent,
-            footerContent,
-            lastUpdated: new Date().toISOString(),
-          });
+          await saveToBack4App();
         }, 2000);
       }
 
@@ -1257,8 +1463,6 @@
 
       function render() {
         if (isLoading) {
-          document.getElementById("app").innerHTML =
-            `<div style="text-align:center; padding:4rem;"><i class="fas fa-spinner fa-pulse" style="font-size:2rem; color:var(--rcs-red);"></i><p style="margin-top:1rem;">Loading...</p></div>`;
           return;
         }
         let mainContent = "";
@@ -1428,7 +1632,8 @@
             document.getElementById("navLinks").classList.toggle("show");
       }
 
-      initData();
+      // Start the app
+      initBack4App();
     </script>
   </body>
 </html>
