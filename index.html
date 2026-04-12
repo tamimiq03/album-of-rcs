@@ -831,8 +831,8 @@
       // ============ BACK4APP CONFIGURATION ============
       // 🔴 এখানে আপনার Back4App থেকে পাওয়া APP ID এবং JS KEY বসান 🔴
       const BACK4APP_CONFIG = {
-        APP_ID: "OcVWtkP2Yxc5BCh43aelfZxp4Zs6lh4nvUDWUkUd", // Replace with your Back4App App ID
-        JS_KEY: "WylCSytrKTTouH2iUX9ak5kHB26Edcms8earY4jS", // Replace with your Back4App JavaScript Key
+        APP_ID: "TxzjN76AnBHKtXWoOxJ27szlbYS4p289q0n9VltH", // Replace with your Back4App App ID
+        JS_KEY: "RiIGyxYpmr69DuOtFgNsPqcH03dX8ycVxIQMSSpD", // Replace with your Back4App JavaScript Key
         SERVER_URL: "https://parseapi.back4app.com/",
       };
 
@@ -921,7 +921,8 @@
           "Album of RCS is a student-driven platform where students share school memories, entertainment content, and nostalgic moments of Rajshahi Collegiate School.",
         aboutContent:
           "Rajshahi Collegiate School, established in 1828, stands as one of the oldest and most prestigious institutions in Bangladesh. Located in the heart of Rajshahi city, the school carries a legacy of academic brilliance, cultural heritage, and timeless camaraderie.",
-        footerContent: "Album of RCS — preserving school memories since 2025",
+        footerContent:
+          "Sharing memes, trolls and moments reflecting the life of every student of Rajshahi Collegiate School ",
       };
 
       let globalData = { teachers: [], notices: [], gallery: [], ratings: [] };
@@ -1407,7 +1408,7 @@
       }
 
       function renderTeachers() {
-        return `<div class="animate-up"><h1 style="margin-bottom: 0.5rem;">Faculty & Mentors</h1><p style="color: var(--rcs-gray-600); margin-bottom: 2rem;">${globalData.teachers.length} dedicated teachers</p><div class="grid-gallery">${globalData.teachers.map((t) => `<div class="card"><img class="card-img" src="${t.photo}" alt="${t.name}" style="height: 260px; object-fit: cover;" onerror="this.src='https://randomuser.me/api/portraits/lego/1.jpg'"><div class="teacher-info"><h3>${escapeHtml(t.name)}</h3><p><i class="fas fa-user-tie"></i> ${escapeHtml(t.designation)}</p><p onclick="copyToClipboard('${t.phone}')" style="cursor: pointer;"><i class="fas fa-phone"></i> ${escapeHtml(t.phone || "N/A")} <span style="font-size:10px;">(click to copy)</span></p></div></div>`).join("")}</div></div>`;
+        return `<div class="animate-up"><h1 style="margin-bottom: 0.5rem;">Mentors</h1><p style="color: var(--rcs-gray-600); margin-bottom: 2rem;">${globalData.teachers.length} dedicated teachers</p><div class="grid-gallery">${globalData.teachers.map((t) => `<div class="card"><img class="card-img" src="${t.photo}" alt="${t.name}" style="height: 260px; object-fit: cover;" onerror="this.src='https://randomuser.me/api/portraits/lego/1.jpg'"><div class="teacher-info"><h3>${escapeHtml(t.name)}</h3><p><i class="fas fa-user-tie"></i> ${escapeHtml(t.designation)}</p><p onclick="copyToClipboard('${t.phone}')" style="cursor: pointer;"><i class="fas fa-phone"></i> ${escapeHtml(t.phone || "N/A")} <span style="font-size:10px;">(click to copy)</span></p></div></div>`).join("")}</div></div>`;
       }
 
       function renderNotices() {
