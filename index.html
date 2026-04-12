@@ -836,6 +836,46 @@
         SERVER_URL: "https://parseapi.back4app.com/",
       };
 
+      const DEFAULT_DATA = {
+        teachers: [
+          {
+            id: "t1",
+            name: "আফিয়া আখতার",
+            designation: "সভাপতি",
+            phone: "+8801712345678",
+            photo:
+              "https://rcs.edu.bd/images/institution/secretary_image/1731602321.jpg",
+          },
+          {
+            id: "t2",
+            name: "মো: বাইরুল ইসলাম",
+            designation: "প্রধান শিক্ষক",
+            phone: "+8801712345679",
+            photo:
+              "https://rcs.edu.bd/images/institution/headmaster_image/1767187546.jpg",
+          },
+          {
+            id: "t3",
+            name: "Md. Abdur Razzaque",
+            designation: "Senior Teacher",
+            phone: "+8801712345680",
+            photo: "https://randomuser.me/api/portraits/men/42.jpg",
+          },
+          {
+            id: "t4",
+            name: "Professor Md. Shahjahan",
+            designation: "Department Head",
+            phone: "+8801712345681",
+            photo: "https://randomuser.me/api/portraits/men/55.jpg",
+          },
+          {
+            id: "t5",
+            name: "Mrs. Rowshan Ara Begum",
+            designation: "Assistant Teacher",
+            phone: "+8801712345682",
+            photo: "https://randomuser.me/api/portraits/women/44.jpg",
+          },
+        ],
         notices: [
           {
             id: "n1",
@@ -1387,7 +1427,7 @@
       }
 
       function renderFooter() {
-        return `<footer class="premium-footer"><div class="footer-content"><div class="footer-brand"><h3>Album of RCS</h3><p>${escapeHtml(footerContent)}</p></div><div class="footer-social"><a href="mailto:albumofrcs@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a><a href="https://instagram.com/albumofrcs" target="_blank"><i class="fab fa-instagram"></i></a><a href="https://facebook.com/albumofrcs" target="_blank"><i class="fab fa-facebook-f"></i></a></div></div><div class="footer-bottom"><p>Website by <a href="https://instagram.com/tamimiq_" target="_blank">Tamim Iqbal</a></p></div></footer>`;
+        return `<footer class="premium-footer"><div class="footer-content"><div class="footer-brand"><h3>Album of RCS</h3><p>${escapeHtml(footerContent)}</p></div><div class="footer-social"><a href="mailto:albumofrcs@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a><a href="https://instagram.com/albumofrcs" target="_blank"><i class="fab fa-instagram"></i></a><a href="https://facebook.com/albumofrcs" target="_blank"><i class="fab fa-facebook-f"></i></a></div></div><div class="footer-bottom"><p>Website by <a href="https://instagram.com/tamimiq" target="_blank">Tamim Iqbal</a></p></div></footer>`;
       }
 
       window.copyToClipboard = copyToClipboard;
