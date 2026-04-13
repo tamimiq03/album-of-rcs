@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -7,17 +8,10 @@
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
     <title>Album of RCS | Rajshahi Collegiate School</title>
-    <!-- Favicon for all browsers -->
     <link rel="icon" type="image/png" href="logo.png" />
     <link rel="shortcut icon" type="image/png" href="logo.png" />
     <link rel="apple-touch-icon" href="logo.png" />
-
-    <!-- For Google Search result logo -->
     <link rel="image_src" href="logo.png" />
-    <meta
-      name="google-site-verification"
-      content="ODlN5SFN2K-4csTKNkbAkSArWtCNvamxlZt-YWp3LyQ"
-    />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
       rel="stylesheet"
@@ -26,11 +20,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-
-    <!-- Chrome Tab Favicon PNG -->
-    <link rel="icon" type="image/png" href="logo.png" />
-    <link rel="shortcut icon" type="image/png" href="logo.png" />
-
     <style>
       * {
         margin: 0;
@@ -54,7 +43,6 @@
       .main-content {
         flex: 1;
       }
-
       :root {
         --rcs-red: #dc2626;
         --rcs-red-dark: #b91c1c;
@@ -117,18 +105,6 @@
           transform: rotate(360deg);
         }
       }
-      @keyframes ripple {
-        0% {
-          width: 0;
-          height: 0;
-          opacity: 0.5;
-        }
-        100% {
-          width: 200px;
-          height: 200px;
-          opacity: 0;
-        }
-      }
       .animate-up {
         animation: fadeUp 0.6s ease forwards;
       }
@@ -138,8 +114,6 @@
       .animate-slide {
         animation: slideIn 0.5s ease forwards;
       }
-
-      /* Premium Loading Overlay */
       .loading-overlay {
         position: fixed;
         top: 0;
@@ -175,12 +149,12 @@
         justify-content: center;
         margin: 0 auto 2rem;
         animation: heartbeat 1.2s ease infinite;
-        box-shadow: 0 0 30px rgba(220, 38, 38, 0.3);
       }
-      .loading-logo span {
-        font-size: 3rem;
-        font-weight: 800;
-        color: white;
+      .loading-logo img {
+        width: 80px;
+        height: 80px;
+        border-radius: 20px;
+        object-fit: cover;
       }
       .loading-text {
         color: white;
@@ -203,24 +177,6 @@
         animation: spin 0.8s linear infinite;
         margin: 0 auto;
       }
-      .loading-ripple {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 0;
-        height: 0;
-        border-radius: 50%;
-        background: rgba(220, 38, 38, 0.1);
-        animation: ripple 1.5s ease-out infinite;
-      }
-      .loading-ripple:nth-child(2) {
-        animation-delay: 0.5s;
-      }
-      .loading-ripple:nth-child(3) {
-        animation-delay: 1s;
-      }
-
       .navbar {
         position: sticky;
         top: 0;
@@ -302,7 +258,6 @@
           padding: 0.8rem 1.5rem;
         }
       }
-
       .container {
         max-width: 1280px;
         margin: 0 auto;
@@ -333,7 +288,6 @@
         font-size: 0.8rem;
         background: #22c55e;
       }
-
       .hero {
         text-align: center;
         padding: 2rem 1rem 3rem;
@@ -359,8 +313,6 @@
         line-height: 1.6;
         color: var(--rcs-gray-600);
       }
-
-      /* Improved Grid Gallery for PC */
       .grid-gallery {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -440,8 +392,6 @@
         color: var(--rcs-red);
         font-size: 0.9rem;
       }
-
-      /* Notice board PC optimization */
       .notice-card {
         background: white;
         border-radius: 20px;
@@ -496,25 +446,7 @@
         border-radius: 16px;
         margin-top: 0.8rem;
         cursor: pointer;
-        box-shadow: var(--shadow-sm);
       }
-      .click-hint {
-        display: inline-block;
-        margin-top: 0.8rem;
-        font-size: 0.75rem;
-        color: var(--rcs-red);
-        animation: pulse 1.5s ease infinite;
-      }
-      @keyframes pulse {
-        0%,
-        100% {
-          opacity: 0.6;
-        }
-        50% {
-          opacity: 1;
-        }
-      }
-
       .rating-card {
         background: white;
         border-radius: 20px;
@@ -526,10 +458,6 @@
         margin-left: auto;
         margin-right: auto;
       }
-      .rating-card:hover {
-        transform: translateX(5px);
-      }
-
       form input,
       form textarea {
         width: 100%;
@@ -545,7 +473,6 @@
         border-color: var(--rcs-red);
         box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
       }
-
       .admin-container {
         max-width: 1400px;
         margin: 0 auto;
@@ -655,7 +582,6 @@
       .edit-form.show {
         display: block;
       }
-
       .premium-footer {
         background: linear-gradient(135deg, #0a0a0f, #14141c);
         color: #a1a1aa;
@@ -712,10 +638,6 @@
         font-size: 1.1rem;
         font-weight: 700;
       }
-      .footer-bottom a:hover {
-        text-decoration: underline;
-      }
-
       .login-card {
         background: white;
         border-radius: 32px;
@@ -758,8 +680,6 @@
         font-size: 40px;
         cursor: pointer;
       }
-
-      /* Section headers */
       h1 {
         font-size: 2.2rem;
         font-weight: 700;
@@ -781,7 +701,6 @@
           font-size: 1.8rem;
         }
       }
-
       .copy-toast {
         position: fixed;
         bottom: 80px;
@@ -799,28 +718,9 @@
   </head>
   <body>
     <div id="app"></div>
-
-    <!-- Loading Overlay -->
     <div id="loadingOverlay" class="loading-overlay">
       <div class="loading-content">
-        <div class="loading-ripple"></div>
-        <div class="loading-ripple"></div>
-        <div class="loading-ripple"></div>
-
-        <!-- এখানে পরিবর্তন করুন - টেক্সট এর জায়গায় ইমেজ -->
-        <div class="loading-logo">
-          <img
-            src="logo.png"
-            alt="RCS Logo"
-            style="
-              width: 80px;
-              height: 80px;
-              border-radius: 20px;
-              object-fit: cover;
-            "
-          />
-        </div>
-
+        <div class="loading-logo"><img src="logo.png" alt="RCS Logo" /></div>
         <div class="loading-text">Album of RCS</div>
         <div class="loading-sub">রাজশাহী কলেজিয়েট স্কুল</div>
         <div class="loading-spinner"></div>
@@ -828,68 +728,408 @@
     </div>
 
     <script>
-      // ============ BACK4APP CONFIGURATION ============
-      // 🔴 এখানে আপনার Back4App থেকে পাওয়া APP ID এবং JS KEY বসান 🔴
-      const BACK4APP_CONFIG = {
-        APP_ID: "TxzjN76AnBHKtXWoOxJ27szlbYS4p289q0n9VltH", // Replace with your Back4App App ID
-        JS_KEY: "RiIGyxYpmr69DuOtFgNsPqcH03dX8ycVxIQMSSpD", // Replace with your Back4App JavaScript Key
-        SERVER_URL: "https://parseapi.back4app.com/",
+      // ==================================================
+      // JSONBin.io কনফিগারেশন - তোর ডাটা দিয়ে রেডি
+      // সবকিছু সেভ হবে: Teachers, Gallery, Notices, Ratings, সব!
+      // ==================================================
+
+      // 🔴 তোর JSONBin ক্রেডেনশিয়াল
+      const JSONBIN_CONFIG = {
+        API_KEY: "$2a$10$ez3NG2/IPBpqB9f6KwB9r.tAQC3qW5awSjT5CQvK.LmGWKVD2aWvu",
+        BIN_ID: "69dc2e50aaba882197f0d274",
       };
 
+      const STORAGE_KEY = "rcs_album_data";
+      let globalData = { teachers: [], notices: [], gallery: [], ratings: [] };
+      let homeContent = "",
+        aboutContent = "",
+        footerContent = "";
+      let isLoading = true;
+      let adminLogged = false;
+      let currentRoute = window.location.hash.slice(1) || "home";
+
+      // ডিফল্ট ডাটা
       const DEFAULT_DATA = {
         teachers: [
-          {
-            id: "t1",
-            name: "আফিয়া আখতার",
-            designation: "সভাপতি",
-            phone: "+8801712345678",
-            photo:
-              "https://rcs.edu.bd/images/institution/secretary_image/1731602321.jpg",
-          },
-          {
-            id: "t2",
-            name: "মো: বাইরুল ইসলাম",
-            designation: "প্রধান শিক্ষক",
-            phone: "+8801712345679",
-            photo:
-              "https://rcs.edu.bd/images/institution/headmaster_image/1767187546.jpg",
-          },
-          {
-            id: "t3",
-            name: "Md. Abdur Razzaque",
-            designation: "Senior Teacher",
-            phone: "+8801712345680",
-            photo: "https://randomuser.me/api/portraits/men/42.jpg",
-          },
-          {
-            id: "t4",
-            name: "Professor Md. Shahjahan",
-            designation: "Department Head",
-            phone: "+8801712345681",
-            photo: "https://randomuser.me/api/portraits/men/55.jpg",
-          },
-          {
-            id: "t5",
-            name: "Mrs. Rowshan Ara Begum",
-            designation: "Assistant Teacher",
-            phone: "+8801712345682",
-            photo: "https://randomuser.me/api/portraits/women/44.jpg",
-          },
+    {
+        id: "t1",
+        name: "আফিয়া আখতার",
+        designation: "সভাপতি",
+        phone: "+8801712345678",
+        photo: "https://rcs.edu.bd/images/institution/secretary_image/1731602321.jpg"
+    },
+    {
+        id: "t2",
+        name: "মো: বাইরুল ইসলাম",
+        designation: "প্রধান শিক্ষক",
+        phone: "+8801712345679",
+        photo: "https://rcs.edu.bd/images/institution/headmaster_image/1767187546.jpg"
+    },
+    {
+        id: "t3",
+        name: "মো: গোলাম মোস্তফা",
+        designation: "সহকারী প্রধান শিক্ষক (চলতি দায়িত্ব)",
+        phone: "01716437748",
+        photo: "https://rcs.edu.bd/images/teacher/1758289761.jpg"
+    },
+    {
+        id: "t4",
+        name: "MD. HAFIZUR RAHAMN",
+        designation: "সহকারী শিক্ষক (ইংরেজি)",
+        phone: "01725767065",
+        photo: "https://rcs.edu.bd/images/teacher/1725038592.jpg"
+    },
+    {
+        id: "t5",
+        name: "BIDDUT KUMER MONDAL",
+        designation: "সহকারী শিক্ষক (ইংরেজি)",
+        phone: "01710296590",
+        photo: "https://rcs.edu.bd/images/teacher/1725038647.jpg"
+    },
+    {
+        id: "t6",
+        name: "MD. SAIFUL ISLAM",
+        designation: "সহকারী শিক্ষক (গণিত)",
+        phone: "01753388100",
+        photo: "https://rcs.edu.bd/images/teacher/1725033823.jpg"
+    },
+    {
+        id: "t7",
+        name: "MD. ARIFUL ISLAM",
+        designation: "সহকারী শিক্ষক (গণিত)",
+        phone: "01711944333",
+        photo: "https://rcs.edu.bd/images/teacher/1725038526.jpg"
+    },
+    {
+        id: "t8",
+        name: "AMIT KUMAR RAY",
+        designation: "সহকারী শিক্ষক (গণিত)",
+        phone: "01764747605",
+        photo: "https://rcs.edu.bd/images/teacher/1725039141.jpg"
+    },
+    {
+        id: "t9",
+        name: "প্রিয়াংকা সিকদার",
+        designation: "সহকারী শিক্ষক (চারুকলা)",
+        phone: "01745077507",
+        photo: "https://rcs.edu.bd/images/teacher/1725034295.jpg"
+    },
+    {
+        id: "t10",
+        name: "MD. RABIUDDIN CHOWDHURY",
+        designation: "সহকারী শিক্ষক (চারুকলা)",
+        phone: "01718627496",
+        photo: "https://rcs.edu.bd/images/teacher/1762853991.png"
+    },
+    {
+        id: "t11",
+        name: "Mizanur Rahman Sohag",
+        designation: "সহকারী শিক্ষক (সামাজিক বিজ্ঞান)",
+        phone: "01730632699",
+        photo: "https://rcs.edu.bd/images/teacher/1725039209.jpg"
+    },
+    {
+        id: "t12",
+        name: "কৃষ্ণ কুমার মন্ডল",
+        designation: "সহকারী শিক্ষক (সামাজিক বিজ্ঞান)",
+        phone: "01722751164",
+        photo: "https://rcs.edu.bd/images/teacher/1758289923.jpg"
+    },
+    {
+        id: "t13",
+        name: "SHAHIDULLAH",
+        designation: "সহকারী শিক্ষক (ইসলাম ধর্ম)",
+        phone: "01717516333",
+        photo: "https://rcs.edu.bd/images/teacher/1758290585.jpg"
+    },
+    {
+        id: "t14",
+        name: "MD. ASHEK ELAHEE",
+        designation: "সহকারী শিক্ষক (ইসলাম ধর্ম)",
+        phone: "01929430257",
+        photo: "https://rcs.edu.bd/images/teacher/1725038979.jpg"
+    },
+    {
+        id: "t15",
+        name: "MOHIDUL ISLAM",
+        designation: "সহকারী শিক্ষক (ইসলাম ধর্ম)",
+        phone: "01738711314",
+        photo: "https://rcs.edu.bd/images/teacher/1725039062.jpg"
+    },
+    {
+        id: "t16",
+        name: "মোঃ সাজ্জাদ হোসেন",
+        designation: "সহকারী শিক্ষক (ইসলাম ধর্ম)",
+        phone: "01712073573",
+        photo: "https://rcs.edu.bd/images/teacher/1730561692.jpg"
+    },
+    {
+        id: "t17",
+        name: "মোহাম্মদ যাকারিয়া",
+        designation: "সহকারী শিক্ষক (ইসলাম ধর্ম)",
+        phone: "01737214324",
+        photo: "https://rcs.edu.bd/images/teacher/1758290346.jpg"
+    },
+    {
+        id: "t18",
+        name: "SOMA SARKER",
+        designation: "সহকারী শিক্ষক (ভৌত বিজ্ঞান)",
+        phone: "01721335249",
+        photo: "https://rcs.edu.bd/images/teacher/1725038446.jpg"
+    },
+    {
+        id: "t19",
+        name: "মোঃ হাসানুজ্জামান",
+        designation: "সহকারী শিক্ষক (ভৌত বিজ্ঞান)",
+        phone: "01722456144",
+        photo: "https://rcs.edu.bd/images/teacher/1758290225.jpg"
+    },
+    {
+        id: "t20",
+        name: "সেলিনা খাতুন",
+        designation: "সহকারী শিক্ষক (ব্যবসায় শিক্ষা)",
+        phone: "01765918942",
+        photo: "https://rcs.edu.bd/images/teacher/1730561405.jpg"
+    },
+    {
+        id: "t21",
+        name: "TARIKUL ISLAM",
+        designation: "সিনিয়র শিক্ষক (জীববিজ্ঞান)",
+        phone: "01716049348",
+        photo: "https://rcs.edu.bd/images/teacher/1730561024.jpg"
+    },
+    {
+        id: "t22",
+        name: "S.M. MOSHARAF HOSSAIN",
+        designation: "সিনিয়র শিক্ষক (জীববিজ্ঞান)",
+        phone: "01712196605",
+        photo: "https://rcs.edu.bd/images/teacher/1725033985.jpg"
+    },
+    {
+        id: "t23",
+        name: "CHITTYA RANJAN SINGH",
+        designation: "সিনিয়র শিক্ষক (জীববিজ্ঞান)",
+        phone: "01718840203",
+        photo: "https://rcs.edu.bd/images/teacher/1725034068.jpg"
+    },
+    {
+        id: "t24",
+        name: "মোঃ আবু বাককার সিদ্দিক",
+        designation: "সিনিয়র শিক্ষক (সামাজিক বিজ্ঞান)",
+        phone: "01712439446",
+        photo: "https://rcs.edu.bd/images/teacher/1758289832.jpg"
+    },
+    {
+        id: "t25",
+        name: "MD. EMRAN ALI",
+        designation: "সিনিয়র শিক্ষক (ইংরেজি)",
+        phone: "01712512262",
+        photo: "https://rcs.edu.bd/images/teacher/1725033743.jpg"
+    },
+    {
+        id: "t26",
+        name: "MD. ABDUS SALAM MONDOL",
+        designation: "সিনিয়র শিক্ষক (ইংরেজি)",
+        phone: "01712833116",
+        photo: "https://rcs.edu.bd/images/teacher/1725034411.jpg"
+    },
+    {
+        id: "t27",
+        name: "AKHIL CHANDRA GHOSH",
+        designation: "সিনিয়র শিক্ষক (ইংরেজি)",
+        phone: "01716286589",
+        photo: "https://rcs.edu.bd/images/teacher/1725034510.jpg"
+    },
+    {
+        id: "t28",
+        name: "সামীমা ভেনিস",
+        designation: "সিনিয়র শিক্ষক (ইংরেজি)",
+        phone: "01718282161",
+        photo: "https://rcs.edu.bd/images/teacher/1725037589.jpg"
+    },
+    {
+        id: "t29",
+        name: "LAILA BILKIS",
+        designation: "সিনিয়র শিক্ষক (ইংরেজি)",
+        phone: "01726809444",
+        photo: "https://rcs.edu.bd/images/teacher/1725037741.jpg"
+    },
+    {
+        id: "t30",
+        name: "মোঃ নাজমুল হক",
+        designation: "সিনিয়র শিক্ষক (ইংরেজি)",
+        phone: "01711412186",
+        photo: "https://rcs.edu.bd/images/teacher/1758289645.jpg"
+    },
+    {
+        id: "t31",
+        name: "মোঃ কামারুজ্জামান",
+        designation: "সিনিয়র শিক্ষক (ইংরেজি)",
+        phone: "01712292358",
+        photo: "https://rcs.edu.bd/images/teacher/1758290723.jpg"
+    },
+    {
+        id: "t32",
+        name: "MD. MOIN UDDIN",
+        designation: "সিনিয়র শিক্ষক (ব্যবসায় শিক্ষা)",
+        phone: "01751566844",
+        photo: "https://rcs.edu.bd/images/teacher/1725033474.jpg"
+    },
+    {
+        id: "t33",
+        name: "MD. EZAZUR RAHMAN",
+        designation: "সিনিয়র শিক্ষক (ব্যবসায় শিক্ষা)",
+        phone: "01718406440",
+        photo: "https://rcs.edu.bd/images/teacher/1725034132.jpg"
+    },
+    {
+        id: "t34",
+        name: "MD. SHAMIM REZA",
+        designation: "সিনিয়র শিক্ষক (ব্যবসায় শিক্ষা)",
+        phone: "01712499739",
+        photo: "https://rcs.edu.bd/images/teacher/1725038170.jpg"
+    },
+    {
+        id: "t35",
+        name: "আবু আহাম্মদ আখতারুজ্জামান",
+        designation: "সিনিয়র শিক্ষক (ভৌতবিজ্ঞান)",
+        phone: "01715974636",
+        photo: "https://rcs.edu.bd/images/teacher/1725037657.jpg"
+    },
+    {
+        id: "t36",
+        name: "মো: হাসমত উল্লাহ",
+        designation: "সিনিয়র শিক্ষক (ভৌতবিজ্ঞান)",
+        phone: "01718158583",
+        photo: "https://rcs.edu.bd/images/teacher/1758290287.jpg"
+    },
+    {
+        id: "t37",
+        name: "MD. SHAHIN KAMAL",
+        designation: "সিনিয়র শিক্ষক (গণিত)",
+        phone: "01913288663",
+        photo: "https://rcs.edu.bd/images/teacher/1725034583.jpg"
+    },
+    {
+        id: "t38",
+        name: "NARGIS AKHTER BANU",
+        designation: "সিনিয়র শিক্ষক (গণিত)",
+        phone: "01831774421",
+        photo: "https://rcs.edu.bd/images/teacher/1725037442.jpg"
+    },
+    {
+        id: "t39",
+        name: "JESMIN JAHAN",
+        designation: "সিনিয়র শিক্ষক (বাংলা)",
+        phone: "01723591809",
+        photo: "https://rcs.edu.bd/images/teacher/1725038271.jpg"
+    },
+    {
+        id: "t40",
+        name: "KAZI FARHANA AKTER",
+        designation: "সিনিয়র শিক্ষক (বাংলা)",
+        phone: "01716439443",
+        photo: "https://rcs.edu.bd/images/teacher/1725038334.jpg"
+    },
+    {
+        id: "t41",
+        name: "Md. Mosharraf Hossen",
+        designation: "সিনিয়র শিক্ষক (ভূগোল)",
+        phone: "01721590040",
+        photo: "https://rcs.edu.bd/images/teacher/1725034196.jpg"
+    },
+    {
+        id: "t42",
+        name: "HOSNA ARA SATHEE",
+        designation: "সিনিয়র শিক্ষক (ভূগোল)",
+        phone: "০১৭১৪৮৬৫৪৪৭",
+        photo: "https://rcs.edu.bd/images/teacher/1725038089.jpg"
+    },
+    {
+        id: "t43",
+        name: "MD. JEL HOSSAIN",
+        designation: "সিনিয়র শিক্ষক (কৃষি শিক্ষা)",
+        phone: "01712663582",
+        photo: "https://rcs.edu.bd/images/teacher/1725034644.jpg"
+    },
+    {
+        id: "t44",
+        name: "A.U.M. SHAHIDUL ISLAM",
+        designation: "সিনিয়র শিক্ষক (কৃষি শিক্ষা)",
+        phone: "01716728279",
+        photo: "https://rcs.edu.bd/images/teacher/1725035404.jpg"
+    },
+    {
+        id: "t45",
+        name: "MD.ABU TORAB ALI AZAD",
+        designation: "সিনিয়র শিক্ষক (শারীরিক শিক্ষা)",
+        phone: "01716385900",
+        photo: "https://rcs.edu.bd/images/teacher/1725035494.jpg"
+    },
+    {
+        id: "t46",
+        name: "মোঃ কাওছার আহমেদ",
+        designation: "সিনিয়র শিক্ষক (শারীরিক শিক্ষা)",
+        phone: "01734563654",
+        photo: "https://rcs.edu.bd/images/teacher/1758290158.jpg"
+    },
+    {
+        id: "t47",
+        name: "MD. MASUD RANA",
+        designation: "সহকারী শিক্ষক (বাংলা)",
+        phone: "01716265808",
+        photo: "https://rcs.edu.bd/images/teacher/1725034886.jpg"
+    },
+    {
+        id: "t48",
+        name: "MD. ALOMGIR HOSAIN",
+        designation: "সহকারী শিক্ষক (বাংলা)",
+        phone: "01710001147",
+        photo: "https://rcs.edu.bd/images/teacher/1725038717.jpg"
+    },
+    {
+        id: "t49",
+        name: "MD. ZAHANGIR ALAM",
+        designation: "সহকারী শিক্ষক (বাংলা)",
+        phone: "01745134264",
+        photo: "https://rcs.edu.bd/images/teacher/1725038910.jpg"
+    },
+    {
+        id: "t50",
+        name: "সুমাইয়া খাতুন",
+        designation: "সহকারী শিক্ষক (বাংলা)",
+        phone: "01304527021",
+        photo: "https://rcs.edu.bd/images/teacher/1758289570.jpg"
+    },
+    {
+        id: "t51",
+        name: "তারিফুল মুহায়মিন",
+        designation: "সহকারী শিক্ষক (বাংলা)",
+        phone: "01766314018",
+        photo: "https://rcs.edu.bd/images/teacher/1758290653.jpg"
+    },
+    {
+        id: "t52",
+        name: "মোঃ সাইফুল ইসলাম",
+        designation: "সিনিয়র শিক্ষক (ইসলাম ধর্ম)",
+        phone: "01715545791",
+        photo: "https://rcs.edu.bd/images/teacher/1758290439.jpg"
+    }
         ],
         notices: [
           {
             id: "n1",
-            title: "Annual Cultural Program 2026",
+            title: "বার্ষিক সাংস্কৃতিক অনুষ্ঠান ২০২৬",
             description:
-              "The annual cultural program will be held on March 15, 2026. All students are requested to participate.",
+              "আগামী ১৫ মার্চ ২০২৬ তারিখে বার্ষিক সাংস্কৃতিক অনুষ্ঠান অনুষ্ঠিত হবে। সবাইকে অংশগ্রহণের অনুরোধ করা যাচ্ছে।",
             image: "https://picsum.photos/id/106/800/500",
             date: "2026-03-01",
           },
           {
             id: "n2",
-            title: "SSC Exam Preparation Camp",
+            title: "এসএসসি পরীক্ষার প্রস্তুতি ক্যাম্প",
             description:
-              "Special preparation camp for SSC examinees starts from April 1st.",
+              "এসএসসি পরীক্ষার্থীদের জন্য বিশেষ প্রস্তুতি ক্যাম্প ১ এপ্রিল থেকে শুরু হবে।",
             image: "",
             date: "2026-02-28",
           },
@@ -898,22 +1138,22 @@
           {
             id: "g1",
             url: "https://picsum.photos/id/20/500/350",
-            title: "Annual Sports Celebration",
+            title: "বার্ষিক ক্রীড়া প্রতিযোগিতা",
           },
           {
             id: "g2",
             url: "https://picsum.photos/id/26/500/350",
-            title: "Science Fair Exhibition",
+            title: "বিজ্ঞান মেলা",
           },
           {
             id: "g3",
             url: "https://picsum.photos/id/30/500/350",
-            title: "Classroom Chronicles",
+            title: "শ্রেণিকক্ষের মুহূর্ত",
           },
           {
             id: "g4",
             url: "https://picsum.photos/id/44/500/350",
-            title: "Teachers' Day Tribute",
+            title: "শিক্ষক দিবসের শ্রদ্ধা",
           },
         ],
         ratings: [],
@@ -922,72 +1162,112 @@
         aboutContent:
           "Rajshahi Collegiate School, established in 1828, stands as one of the oldest and most prestigious institutions in Bangladesh. Located in the heart of Rajshahi city, the school carries a legacy of academic brilliance, cultural heritage, and timeless camaraderie.",
         footerContent:
-          "Sharing memes, trolls and moments reflecting the life of every student of Rajshahi Collegiate School ",
+          "Sharing memes, trolls and moments reflecting the life of every student of Rajshahi Collegiate School",
       };
 
-      let globalData = { teachers: [], notices: [], gallery: [], ratings: [] };
-      let homeContent = "",
-        aboutContent = "",
-        footerContent = "";
-      let isLoading = true;
-
-      // Back4App initialization check
-      let back4appReady = false;
-      let Parse = null;
-
-      function initBack4App() {
-        if (
-          BACK4APP_CONFIG.APP_ID !== "YOUR_BACK4APP_APP_ID" &&
-          BACK4APP_CONFIG.JS_KEY !== "YOUR_BACK4APP_JS_KEY"
-        ) {
-          // Load Parse SDK dynamically
-          const script = document.createElement("script");
-          script.src =
-            "https://cdn.parseplatform.org/parse-js-sdk/latest/parse.min.js";
-          script.onload = () => {
-            Parse = window.Parse;
-            Parse.initialize(BACK4APP_CONFIG.APP_ID, BACK4APP_CONFIG.JS_KEY);
-            Parse.serverURL = BACK4APP_CONFIG.SERVER_URL;
-            back4appReady = true;
-            console.log("Back4App initialized successfully");
-            loadDataFromBack4App();
-          };
-          script.onerror = () => {
-            console.warn("Back4App SDK failed to load, using localStorage");
-            loadLocalData();
-          };
-          document.head.appendChild(script);
-        } else {
-          console.log("Back4App keys not configured, using localStorage");
-          loadLocalData();
+      // ============ JSONBin অপারেশন ============
+      async function saveToJSONBin() {
+        const dataToSave = {
+          teachers: globalData.teachers,
+          notices: globalData.notices,
+          gallery: globalData.gallery,
+          ratings: globalData.ratings,
+          homeContent: homeContent,
+          aboutContent: aboutContent,
+          footerContent: footerContent,
+          lastUpdated: new Date().toISOString(),
+        };
+        try {
+          console.log("📤 JSONBin-এ ডাটা সেভ হচ্ছে...");
+          const response = await fetch(
+            `https://api.jsonbin.io/v3/b/${JSONBIN_CONFIG.BIN_ID}`,
+            {
+              method: "PUT",
+              headers: {
+                "Content-Type": "application/json",
+                "X-Master-Key": JSONBIN_CONFIG.API_KEY,
+              },
+              body: JSON.stringify(dataToSave),
+            },
+          );
+          if (response.ok) console.log("✅ JSONBin-এ ডাটা সেভ হয়েছে!");
+          else console.error("❌ JSONBin সেভ ব্যর্থ");
+        } catch (error) {
+          console.error("❌ নেটওয়ার্ক এরর:", error);
         }
+        saveToLocalStorage();
       }
 
-      async function loadDataFromBack4App() {
-        if (!back4appReady || !Parse) {
-          loadLocalData();
-          return;
-        }
+      async function loadFromJSONBin() {
         try {
-          const query = new Parse.Query("RCSData");
-          const result = await query.first();
-          if (result) {
-            const data = result.toJSON();
-            if (data.teachers) globalData.teachers = data.teachers;
-            if (data.notices) globalData.notices = data.notices;
-            if (data.gallery) globalData.gallery = data.gallery;
-            if (data.ratings) globalData.ratings = data.ratings;
-            if (data.homeContent) homeContent = data.homeContent;
-            if (data.aboutContent) aboutContent = data.aboutContent;
-            if (data.footerContent) footerContent = data.footerContent;
+          console.log("📥 JSONBin থেকে ডাটা লোড হচ্ছে...");
+          const response = await fetch(
+            `https://api.jsonbin.io/v3/b/${JSONBIN_CONFIG.BIN_ID}/latest`,
+            {
+              headers: { "X-Master-Key": JSONBIN_CONFIG.API_KEY },
+            },
+          );
+          if (response.ok) {
+            const result = await response.json();
+            const data = result.record;
+            globalData.teachers = data.teachers?.length
+              ? data.teachers
+              : [...DEFAULT_DATA.teachers];
+            globalData.notices = data.notices?.length
+              ? data.notices
+              : [...DEFAULT_DATA.notices];
+            globalData.gallery = data.gallery?.length
+              ? data.gallery
+              : [...DEFAULT_DATA.gallery];
+            globalData.ratings = data.ratings || [];
+            homeContent = data.homeContent || DEFAULT_DATA.homeContent;
+            aboutContent = data.aboutContent || DEFAULT_DATA.aboutContent;
+            footerContent = data.footerContent || DEFAULT_DATA.footerContent;
+            console.log("✅ JSONBin থেকে ডাটা লোড হয়েছে!");
+            saveToLocalStorage();
           } else {
-            useDefaultData();
+            loadFromLocalStorage();
           }
         } catch (error) {
-          console.warn("Back4App fetch failed, using localStorage", error);
-          loadLocalData();
+          loadFromLocalStorage();
         }
         finishLoading();
+      }
+
+      function saveToLocalStorage() {
+        localStorage.setItem(
+          STORAGE_KEY,
+          JSON.stringify({
+            teachers: globalData.teachers,
+            notices: globalData.notices,
+            gallery: globalData.gallery,
+            ratings: globalData.ratings,
+            homeContent,
+            aboutContent,
+            footerContent,
+            lastUpdated: new Date().toISOString(),
+          }),
+        );
+      }
+
+      function loadFromLocalStorage() {
+        const stored = localStorage.getItem(STORAGE_KEY);
+        if (stored) {
+          try {
+            const parsed = JSON.parse(stored);
+            globalData.teachers = parsed.teachers || [...DEFAULT_DATA.teachers];
+            globalData.notices = parsed.notices || [...DEFAULT_DATA.notices];
+            globalData.gallery = parsed.gallery || [...DEFAULT_DATA.gallery];
+            globalData.ratings = parsed.ratings || [];
+            homeContent = parsed.homeContent || DEFAULT_DATA.homeContent;
+            aboutContent = parsed.aboutContent || DEFAULT_DATA.aboutContent;
+            footerContent = parsed.footerContent || DEFAULT_DATA.footerContent;
+          } catch (e) {
+            useDefaultData();
+          }
+        } else {
+          useDefaultData();
+        }
       }
 
       function useDefaultData() {
@@ -1000,96 +1280,19 @@
         footerContent = DEFAULT_DATA.footerContent;
       }
 
-      function loadLocalData() {
-        const stored = localStorage.getItem("rcs_album_data_back4app");
-        if (stored) {
-          try {
-            const parsed = JSON.parse(stored);
-            globalData.teachers = parsed.teachers || [];
-            globalData.notices = parsed.notices || [];
-            globalData.gallery = parsed.gallery || [];
-            globalData.ratings = parsed.ratings || [];
-            homeContent = parsed.homeContent || DEFAULT_DATA.homeContent;
-            aboutContent = parsed.aboutContent || DEFAULT_DATA.aboutContent;
-            footerContent = parsed.footerContent || DEFAULT_DATA.footerContent;
-            if (globalData.teachers.length === 0)
-              globalData.teachers = [...DEFAULT_DATA.teachers];
-            if (globalData.notices.length === 0)
-              globalData.notices = [...DEFAULT_DATA.notices];
-            if (globalData.gallery.length === 0)
-              globalData.gallery = [...DEFAULT_DATA.gallery];
-          } catch (e) {
-            useDefaultData();
-          }
-        } else {
-          useDefaultData();
-        }
-        finishLoading();
-      }
-
-      async function saveToBack4App() {
-        if (!back4appReady || !Parse) {
-          saveLocalData();
-          return;
-        }
-        try {
-          const query = new Parse.Query("RCSData");
-          let obj = await query.first();
-          if (!obj) {
-            obj = new Parse.Object("RCSData");
-          }
-          obj.set("teachers", globalData.teachers);
-          obj.set("notices", globalData.notices);
-          obj.set("gallery", globalData.gallery);
-          obj.set("ratings", globalData.ratings);
-          obj.set("homeContent", homeContent);
-          obj.set("aboutContent", aboutContent);
-          obj.set("footerContent", footerContent);
-          obj.set("lastUpdated", new Date().toISOString());
-          await obj.save();
-          console.log("Saved to Back4App successfully");
-        } catch (error) {
-          console.warn("Back4App save failed, saving to localStorage", error);
-        }
-        saveLocalData();
-      }
-
-      function saveLocalData() {
-        const toStore = {
-          teachers: globalData.teachers,
-          notices: globalData.notices,
-          gallery: globalData.gallery,
-          ratings: globalData.ratings,
-          homeContent,
-          aboutContent,
-          footerContent,
-          lastUpdated: new Date().toISOString(),
-        };
-        localStorage.setItem(
-          "rcs_album_data_back4app",
-          JSON.stringify(toStore),
-        );
-      }
-
-      function finishLoading() {
-        isLoading = false;
-        render();
-        // Hide loading overlay with animation
-        const overlay = document.getElementById("loadingOverlay");
-        if (overlay) {
-          overlay.classList.add("hide");
-          setTimeout(() => {
-            overlay.style.display = "none";
-          }, 500);
-        }
-      }
-
       let autoSaveTimer = null;
       async function autoSync() {
         if (autoSaveTimer) clearTimeout(autoSaveTimer);
-        autoSaveTimer = setTimeout(async () => {
-          await saveToBack4App();
-        }, 2000);
+        autoSaveTimer = setTimeout(async () => await saveToJSONBin(), 2000);
+      }
+
+      function fileToBase64(file) {
+        return new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = () => resolve(reader.result);
+          reader.onerror = reject;
+          reader.readAsDataURL(file);
+        });
       }
 
       function generateId() {
@@ -1186,6 +1389,33 @@
         autoSync();
       }
 
+      // Admin Functions
+      const SECURITY = {
+        VALID_EMAIL: "albumofrcs@gmail.com",
+        VALID_PASSWORD: "albumofrcs@12#",
+      };
+      function adminLogin(email, pass) {
+        if (
+          email === SECURITY.VALID_EMAIL &&
+          pass === SECURITY.VALID_PASSWORD
+        ) {
+          localStorage.setItem("admin_auth", "true");
+          adminLogged = true;
+          return { success: true };
+        }
+        return { success: false, message: "Invalid credentials" };
+      }
+      function adminLogout() {
+        localStorage.removeItem("admin_auth");
+        adminLogged = false;
+        navigate("home");
+      }
+      function checkAdminSession() {
+        adminLogged = localStorage.getItem("admin_auth") === "true";
+        return adminLogged;
+      }
+      checkAdminSession();
+
       function copyToClipboard(text) {
         navigator.clipboard.writeText(text);
         let toast = document.createElement("div");
@@ -1195,196 +1425,6 @@
         setTimeout(() => toast.remove(), 2000);
       }
 
-      const SECURITY = {
-        MAX_LOGIN_ATTEMPTS: 5,
-        LOCKOUT_DURATION: 15 * 60 * 1000,
-        SESSION_TIMEOUT: 30 * 60 * 1000,
-        VALID_EMAIL: "albumofrcs@gmail.com",
-        VALID_PASSWORD: "albumofrcs@12#",
-      };
-      function getLoginAttempts() {
-        let a = localStorage.getItem("login_attempts");
-        try {
-          return a ? JSON.parse(a) : { count: 0, lockoutUntil: 0 };
-        } catch (e) {
-          return { count: 0, lockoutUntil: 0 };
-        }
-      }
-      function saveLoginAttempts(a) {
-        localStorage.setItem("login_attempts", JSON.stringify(a));
-      }
-      function isAccountLocked() {
-        let a = getLoginAttempts();
-        if (a.lockoutUntil > Date.now())
-          return Math.ceil((a.lockoutUntil - Date.now()) / 60000);
-        return false;
-      }
-      function recordFailedAttempt() {
-        let a = getLoginAttempts();
-        a.count++;
-        if (a.count >= SECURITY.MAX_LOGIN_ATTEMPTS) {
-          a.lockoutUntil = Date.now() + SECURITY.LOCKOUT_DURATION;
-          a.count = 0;
-        }
-        saveLoginAttempts(a);
-        return a;
-      }
-      function resetLoginAttempts() {
-        saveLoginAttempts({ count: 0, lockoutUntil: 0 });
-      }
-      function getClientFingerprint() {
-        return (
-          navigator.userAgent +
-          "|" +
-          new Date().getTimezoneOffset() +
-          "|" +
-          (screen.width || "")
-        );
-      }
-      function simpleHash(str) {
-        let hash = 0;
-        for (let i = 0; i < str.length; i++) {
-          hash = (hash << 5) - hash + str.charCodeAt(i);
-          hash |= 0;
-        }
-        return hash.toString(36);
-      }
-      function verifySession() {
-        let s = localStorage.getItem("admin_session");
-        if (!s) return false;
-        try {
-          let session = JSON.parse(s);
-          let fp = localStorage.getItem("admin_fingerprint");
-          if (session.expiresAt < Date.now()) return false;
-          if (fp !== simpleHash(getClientFingerprint())) return false;
-          return true;
-        } catch (e) {
-          return false;
-        }
-      }
-      function createSession() {
-        let session = {
-          createdAt: Date.now(),
-          expiresAt: Date.now() + SECURITY.SESSION_TIMEOUT,
-        };
-        localStorage.setItem("admin_session", JSON.stringify(session));
-        localStorage.setItem(
-          "admin_fingerprint",
-          simpleHash(getClientFingerprint()),
-        );
-        localStorage.setItem("admin_auth", "true");
-        return true;
-      }
-      function destroySession() {
-        localStorage.removeItem("admin_session");
-        localStorage.removeItem("admin_fingerprint");
-        localStorage.removeItem("admin_auth");
-      }
-      function checkAndExtendSession() {
-        let s = localStorage.getItem("admin_session");
-        if (!s) return false;
-        try {
-          let session = JSON.parse(s);
-          if (session.expiresAt < Date.now()) {
-            destroySession();
-            return false;
-          }
-          if (session.expiresAt - Date.now() > 5 * 60 * 1000) {
-            session.expiresAt = Date.now() + SECURITY.SESSION_TIMEOUT;
-            localStorage.setItem("admin_session", JSON.stringify(session));
-          }
-          return true;
-        } catch (e) {
-          return false;
-        }
-      }
-      let adminLogged = false,
-        sessionTimer = null;
-      function checkAdminSession() {
-        if (verifySession() && checkAndExtendSession()) {
-          adminLogged = true;
-          startSessionTimer();
-          return true;
-        } else {
-          adminLogged = false;
-          if (sessionTimer) clearInterval(sessionTimer);
-          return false;
-        }
-      }
-      function startSessionTimer() {
-        if (sessionTimer) clearInterval(sessionTimer);
-        sessionTimer = setInterval(() => {
-          if (adminLogged && currentRoute === "admin") {
-            if (!checkAndExtendSession()) {
-              adminLogged = false;
-              destroySession();
-              alert("Session expired. Please login again.");
-              navigate("home");
-            }
-          }
-        }, 60000);
-      }
-      checkAdminSession();
-      let currentRoute = window.location.hash.slice(1) || "home";
-      function navigate(route) {
-        currentRoute = route;
-        window.location.hash = route;
-        render();
-      }
-      window.addEventListener("hashchange", () => {
-        currentRoute = window.location.hash.slice(1) || "home";
-        render();
-      });
-      function fileToBase64(file) {
-        return new Promise((resolve, reject) => {
-          const reader = new FileReader();
-          reader.onload = () => resolve(reader.result);
-          reader.onerror = reject;
-          reader.readAsDataURL(file);
-        });
-      }
-      function adminLogin(email, pass) {
-        let lockout = isAccountLocked();
-        if (lockout)
-          return {
-            success: false,
-            message: `Try again in ${lockout} minutes.`,
-          };
-        if (
-          email === SECURITY.VALID_EMAIL &&
-          pass === SECURITY.VALID_PASSWORD
-        ) {
-          resetLoginAttempts();
-          createSession();
-          adminLogged = true;
-          startSessionTimer();
-          return { success: true };
-        } else {
-          let attempts = recordFailedAttempt();
-          let remaining = SECURITY.MAX_LOGIN_ATTEMPTS - attempts.count;
-          if (remaining <= 0)
-            return {
-              success: false,
-              message: "Account locked for 15 minutes.",
-            };
-          return {
-            success: false,
-            message: `Invalid credentials. ${remaining} attempts remaining.`,
-          };
-        }
-      }
-      function adminLogout() {
-        destroySession();
-        adminLogged = false;
-        if (sessionTimer) clearInterval(sessionTimer);
-        navigate("home");
-        render();
-      }
-      function escapeHtml(str) {
-        return String(str).replace(/[&<>]/g, (m) =>
-          m === "&" ? "&amp;" : m === "<" ? "&lt;" : m === ">" ? "&gt;" : m,
-        );
-      }
       function showFullImage(url) {
         let modal = document.getElementById("imageModal");
         let modalImg = document.getElementById("modalImage");
@@ -1397,6 +1437,17 @@
         document.getElementById("imageModal")?.classList.remove("active");
       }
 
+      function navigate(route) {
+        currentRoute = route;
+        window.location.hash = route;
+        render();
+      }
+      window.addEventListener("hashchange", () => {
+        currentRoute = window.location.hash.slice(1) || "home";
+        render();
+      });
+
+      // Render Functions
       function renderHome() {
         return `<div class="hero animate-up"><img class="hero-logo-img" src="logo.png" alt="RCS Logo"><div class="hero-logo">Album of RCS</div><p class="hero-sub">${escapeHtml(homeContent)}</p><div style="margin-top: 2rem;"><button class="btn" onclick="navigate('nostalgia')">Explore Memories <i class="fas fa-arrow-right"></i></button></div></div>`;
       }
@@ -1404,49 +1455,51 @@
         return `<div class="animate-slide" style="min-height: 400px;"><h1 style="color: var(--rcs-red); margin-bottom: 1rem;">About Rajshahi Collegiate School</h1><div style="background: white; padding: 2rem; border-radius: 28px; line-height: 1.7;">${escapeHtml(aboutContent)}</div></div>`;
       }
       function renderNostalgia() {
-        return `<div class="animate-fade"><h1 style="margin-bottom: 1.5rem;">Nostalgia Gallery</h1><div class="grid-gallery">${globalData.gallery.map((img) => `<div class="card"><img class="card-img" src="${img.url}" alt="${img.title}"><div class="caption"><strong>${escapeHtml(img.title)}</strong></div></div>`).join("")}</div></div>`;
+        return `<div class="animate-fade"><h1 style="margin-bottom: 1.5rem;">Nostalgia Gallery</h1><div class="grid-gallery">${globalData.gallery.map((img) => `<div class="card" onclick="showFullImage('${img.url}')"><img class="card-img" src="${img.url}" alt="${img.title}"><div class="caption"><strong>${escapeHtml(img.title)}</strong></div></div>`).join("")}</div></div>`;
       }
-
       function renderTeachers() {
-        return `<div class="animate-up"><h1 style="margin-bottom: 0.5rem;">Mentors</h1><p style="color: var(--rcs-gray-600); margin-bottom: 2rem;">${globalData.teachers.length} dedicated teachers</p><div class="grid-gallery">${globalData.teachers.map((t) => `<div class="card"><img class="card-img" src="${t.photo}" alt="${t.name}" style="height: 260px; object-fit: cover;" onerror="this.src='https://randomuser.me/api/portraits/lego/1.jpg'"><div class="teacher-info"><h3>${escapeHtml(t.name)}</h3><p><i class="fas fa-user-tie"></i> ${escapeHtml(t.designation)}</p><p onclick="copyToClipboard('${t.phone}')" style="cursor: pointer;"><i class="fas fa-phone"></i> ${escapeHtml(t.phone || "N/A")} <span style="font-size:10px;">(click to copy)</span></p></div></div>`).join("")}</div></div>`;
+        return `<div class="animate-up"><h1 style="margin-bottom: 0.5rem;">Mentors</h1><p style="color: var(--rcs-gray-600); margin-bottom: 2rem;">${globalData.teachers.length} dedicated teachers</p><div class="grid-gallery">${globalData.teachers.map((t) => `<div class="card"><img class="card-img" src="${t.photo}" alt="${t.name}" onerror="this.src='https://randomuser.me/api/portraits/lego/1.jpg'"><div class="teacher-info"><h3>${escapeHtml(t.name)}</h3><p><i class="fas fa-user-tie"></i> ${escapeHtml(t.designation)}</p><p onclick="copyToClipboard('${t.phone}')" style="cursor: pointer;"><i class="fas fa-phone"></i> ${escapeHtml(t.phone || "N/A")} <span style="font-size:10px;">(click to copy)</span></p></div></div>`).join("")}</div></div>`;
       }
-
       function renderNotices() {
-        return `<div class="animate-up"><h1 style="margin-bottom: 0.5rem;">Notice Board</h1><p style="color: var(--rcs-gray-600); margin-bottom: 2rem;">Click on any notice to read full details</p>${globalData.notices.map((notice) => `<div class="notice-card" data-id="${notice.id}"><div class="notice-title"><span><i class="fas fa-bullhorn" style="color:var(--rcs-red); margin-right:8px;"></i>${escapeHtml(notice.title)}</span><span class="notice-badge"><i class="far fa-calendar-alt"></i> ${notice.date}</span></div><div class="notice-detail" id="detail-${notice.id}"><p>${escapeHtml(notice.description)}</p>${notice.image ? `<img src="${notice.image}" class="notice-img" onclick="event.stopPropagation(); showFullImage('${notice.image}')" alt="Notice Image"><div class="click-hint"><i class="fas fa-hand-point-right"></i> Click here to see more</div>` : ""}</div></div>`).join("")}</div>`;
+        return `<div class="animate-up"><h1 style="margin-bottom: 0.5rem;">Notice Board</h1><p style="color: var(--rcs-gray-600); margin-bottom: 2rem;">Click on any notice to read full details</p>${globalData.notices.map((notice) => `<div class="notice-card" data-id="${notice.id}"><div class="notice-title"><span><i class="fas fa-bullhorn" style="color:var(--rcs-red); margin-right:8px;"></i>${escapeHtml(notice.title)}</span><span class="notice-badge"><i class="far fa-calendar-alt"></i> ${notice.date}</span></div><div class="notice-detail" id="detail-${notice.id}"><p>${escapeHtml(notice.description)}</p>${notice.image ? `<img src="${notice.image}" class="notice-img" onclick="event.stopPropagation(); showFullImage('${notice.image}')" alt="Notice Image">` : ""}</div></div>`).join("")}</div>`;
       }
-
       function renderRatings() {
         return `<div class="animate-up"><h1>Community Voices</h1><p style="color: var(--rcs-gray-600); margin-bottom: 1.5rem;">Share your journey and read memories</p><div style="background: var(--rcs-gray-50); border-radius: 28px; padding: 2rem; margin: 1.5rem auto; max-width: 800px;"><h3>Leave a Memory</h3><form id="reviewForm"><input type="text" id="revName" placeholder="Full name" required><input type="text" id="revSchool" placeholder="School" required><input type="text" id="revBatch" placeholder="SSC Batch"><input type="email" id="revEmail" placeholder="Email"><textarea rows="3" id="revReview" placeholder="Write your nostalgic memory..." required></textarea><button type="submit" class="btn">Share Memory <i class="fas fa-paper-plane"></i></button></form></div><h2>Recent Reflections</h2>${globalData.ratings.map((r) => `<div class="rating-card"><div><strong>${escapeHtml(r.name)}</strong> • Batch ${escapeHtml(r.batch || "—")} • ${escapeHtml(r.school)}</div><p>${escapeHtml(r.review)}</p><small>${new Date(r.createdAt).toLocaleDateString()}</small></div>`).join("") || '<div style="text-align:center; padding:2rem;">Be the first to share.</div>'}</div>`;
       }
 
       function renderAdmin() {
         if (!adminLogged) {
-          let lockout = isAccountLocked();
-          return `<div class="animate-up"><div class="login-card"><h2><i class="fas fa-shield-alt" style="color:var(--rcs-red);"></i> Admin Login</h2><form id="adminLoginForm"><input type="email" id="adminEmail" placeholder="Email address" required><input type="password" id="adminPass" placeholder="Password" required><button type="submit" class="btn" style="width:100%;" ${lockout ? "disabled" : ""}>Login <i class="fas fa-arrow-right"></i></button></form><div id="loginError" class="error-message"></div></div></div>`;
+          return `<div class="animate-up"><div class="login-card"><h2><i class="fas fa-shield-alt" style="color:var(--rcs-red);"></i> Admin Login</h2><form id="adminLoginForm"><input type="email" id="adminEmail" placeholder="Email address" required><input type="password" id="adminPass" placeholder="Password" required><button type="submit" class="btn" style="width:100%;">Login <i class="fas fa-arrow-right"></i></button></form><div id="loginError" class="error-message"></div></div></div>`;
         }
-        return `<div class="admin-container animate-fade"><div class="admin-header"><h1><i class="fas fa-shield-alt" style="margin-right:10px;"></i>Admin Dashboard</h1><button class="admin-logout" id="logoutAdminBtn"><i class="fas fa-sign-out-alt"></i> Logout</button></div><div class="admin-tabs"><button class="admin-tab active" data-tab="home-tab">Home & About</button><button class="admin-tab" data-tab="teachers-tab">Teachers (${globalData.teachers.length})</button><button class="admin-tab" data-tab="notices-tab">Notices (${globalData.notices.length})</button><button class="admin-tab" data-tab="gallery-tab">Gallery (${globalData.gallery.length})</button><button class="admin-tab" data-tab="ratings-tab">Ratings (${globalData.ratings.length})</button><button class="admin-tab" data-tab="footer-tab">Footer</button></div><div id="home-tab" class="admin-section active"><div class="admin-card"><h3>Homepage Content</h3><textarea id="homeEditArea" rows="3" style="width:100%; border-radius:20px;">${escapeHtml(homeContent)}</textarea><button id="saveHomeBtn" class="btn" style="margin-top:1rem;">Update Home</button></div><div class="admin-card"><h3>About RCS Content</h3><textarea id="aboutEditArea" rows="5" style="width:100%; border-radius:20px;">${escapeHtml(aboutContent)}</textarea><button id="saveAboutBtn" class="btn">Update About</button></div></div><div id="teachers-tab" class="admin-section"><div class="admin-card"><h3>Add New Teacher</h3><button id="showAddTeacherForm" class="btn btn-sm" style="margin-bottom:1rem;">+ Show Form</button><div id="addTeacherForm" class="edit-form"><input type="text" id="teacherName" placeholder="Name"><input type="text" id="teacherDesignation" placeholder="Designation"><input type="text" id="teacherPhone" placeholder="Phone"><input type="text" id="teacherPhotoUrl" placeholder="Image URL"><input type="file" id="teacherPhotoUpload" accept="image/*"><button id="addTeacherBtn" class="btn">Save Teacher</button></div></div><div class="admin-card"><h3>Current Teachers (${globalData.teachers.length})</h3><div id="teacherList">${globalData.teachers.map((t) => `<div class="item-card"><div><strong>${escapeHtml(t.name)}</strong><br><small>${escapeHtml(t.designation)}</small></div><div><button class="edit-btn" onclick="editTeacher('${t.id}')">Edit</button><button class="delete-btn" onclick="deleteTeacherItem('${t.id}')">Delete</button></div></div><div id="edit-form-${t.id}" class="edit-form"><h4>Edit ${escapeHtml(t.name)}</h4><input type="text" id="edit-name-${t.id}" value="${escapeHtml(t.name)}"><input type="text" id="edit-designation-${t.id}" value="${escapeHtml(t.designation)}"><input type="text" id="edit-phone-${t.id}" value="${escapeHtml(t.phone || "")}"><input type="text" id="edit-photo-url-${t.id}" value="${escapeHtml(t.photo || "")}" placeholder="Image URL"><input type="file" id="edit-photo-file-${t.id}" accept="image/*"><button class="btn" onclick="updateTeacherItem('${t.id}')">Update</button></div>`).join("")}</div></div></div><div id="notices-tab" class="admin-section"><div class="admin-card"><h3>Add New Notice</h3><button id="showAddNoticeForm" class="btn btn-sm" style="margin-bottom:1rem;">+ Show Form</button><div id="addNoticeForm" class="edit-form"><input type="text" id="noticeTitle" placeholder="Title"><textarea id="noticeDesc" rows="2" placeholder="Description"></textarea><input type="file" id="noticeImage" accept="image/*"><input type="date" id="noticeDate"><button id="addNoticeBtn" class="btn">Save Notice</button></div></div><div class="admin-card"><h3>Current Notices</h3><div id="noticeList">${globalData.notices.map((n) => `<div class="item-card"><div><strong>${escapeHtml(n.title)}</strong><br><small>${n.date}</small></div><div><button class="edit-btn" onclick="editNotice('${n.id}')">Edit</button><button class="delete-btn" onclick="deleteNoticeItem('${n.id}')">Delete</button></div></div><div id="edit-notice-form-${n.id}" class="edit-form"><h4>Edit Notice</h4><input type="text" id="edit-notice-title-${n.id}" value="${escapeHtml(n.title)}"><textarea id="edit-notice-desc-${n.id}" rows="2">${escapeHtml(n.description)}</textarea><input type="file" id="edit-notice-image-${n.id}" accept="image/*"><input type="date" id="edit-notice-date-${n.id}" value="${n.date}"><button class="btn" onclick="updateNoticeItem('${n.id}')">Update</button></div>`).join("")}</div></div></div><div id="gallery-tab" class="admin-section"><div class="admin-card"><h3>Add New Image</h3><button id="showAddImageForm" class="btn btn-sm" style="margin-bottom:1rem;">+ Show Form</button><div id="addImageForm" class="edit-form"><input type="file" id="galleryFileUpload" accept="image/*"><input type="text" id="galleryTitle" placeholder="Image Title"><button id="addGalleryBtn" class="btn">Upload</button></div></div><div class="admin-card"><h3>Gallery Items</h3><div id="galleryList">${globalData.gallery.map((img) => `<div class="item-card"><div><img src="${img.url}" style="width:40px;height:40px;object-fit:cover;border-radius:8px;"> <strong>${escapeHtml(img.title)}</strong></div><div><button class="edit-btn" onclick="editGallery('${img.id}')">Edit</button><button class="delete-btn" onclick="deleteGalleryItemConfirm('${img.id}')">Delete</button></div></div><div id="edit-gallery-form-${img.id}" class="edit-form"><input type="text" id="edit-gallery-title-${img.id}" value="${escapeHtml(img.title)}"><button class="btn" onclick="updateGalleryItem('${img.id}')">Update Title</button></div>`).join("")}</div></div></div><div id="ratings-tab" class="admin-section"><div class="admin-card"><h3>Manage User Ratings (${globalData.ratings.length})</h3><div id="ratingsList">${globalData.ratings.map((r) => `<div class="item-card"><div><strong>${escapeHtml(r.name)}</strong>: ${escapeHtml(r.review.substring(0, 50))}${r.review.length > 50 ? "..." : ""}</div><button class="delete-btn" onclick="deleteRatingItem('${r.id}')">Delete</button></div>`).join("") || "<p>No ratings yet.</p>"}</div><button id="deleteAllRatingsBtn" class="btn" style="background:#b91c1c; margin-top:1rem;">Delete All Ratings</button></div></div><div id="footer-tab" class="admin-section"><div class="admin-card"><h3>Footer Text</h3><textarea id="footerEdit" rows="3" style="width:100%; border-radius:20px;">${escapeHtml(footerContent)}</textarea><button id="saveFooterBtn" class="btn" style="margin-top:1rem;">Update Footer</button></div></div></div>`;
+        return `<div class="admin-container animate-fade"><div class="admin-header"><h1><i class="fas fa-shield-alt" style="margin-right:10px;"></i>Admin Dashboard</h1><button class="admin-logout" id="logoutAdminBtn"><i class="fas fa-sign-out-alt"></i> Logout</button></div><div class="admin-tabs"><button class="admin-tab active" data-tab="home-tab">Home & About</button><button class="admin-tab" data-tab="teachers-tab">Teachers (${globalData.teachers.length})</button><button class="admin-tab" data-tab="notices-tab">Notices (${globalData.notices.length})</button><button class="admin-tab" data-tab="gallery-tab">Gallery (${globalData.gallery.length})</button><button class="admin-tab" data-tab="ratings-tab">Ratings (${globalData.ratings.length})</button><button class="admin-tab" data-tab="footer-tab">Footer</button></div><div id="home-tab" class="admin-section active"><div class="admin-card"><h3>Homepage Content</h3><textarea id="homeEditArea" rows="3" style="width:100%; border-radius:20px;">${escapeHtml(homeContent)}</textarea><button id="saveHomeBtn" class="btn" style="margin-top:1rem;">Update Home</button></div><div class="admin-card"><h3>About RCS Content</h3><textarea id="aboutEditArea" rows="5" style="width:100%; border-radius:20px;">${escapeHtml(aboutContent)}</textarea><button id="saveAboutBtn" class="btn">Update About</button></div></div><div id="teachers-tab" class="admin-section"><div class="admin-card"><h3>Add New Teacher</h3><button id="showAddTeacherForm" class="btn btn-sm" style="margin-bottom:1rem;">+ Show Form</button><div id="addTeacherForm" class="edit-form"><input type="text" id="teacherName" placeholder="Name"><input type="text" id="teacherDesignation" placeholder="Designation"><input type="text" id="teacherPhone" placeholder="Phone"><input type="text" id="teacherPhotoUrl" placeholder="Image URL"><input type="file" id="teacherPhotoUpload" accept="image/*"><button id="addTeacherBtn" class="btn">Save Teacher</button></div></div><div class="admin-card"><h3>Current Teachers (${globalData.teachers.length})</h3><div id="teacherList">${globalData.teachers.map((t) => `<div class="item-card"><div><strong>${escapeHtml(t.name)}</strong><br><small>${escapeHtml(t.designation)}</small></div><div><button class="edit-btn" onclick="editTeacher('${t.id}')">Edit</button><button class="delete-btn" onclick="deleteTeacherItem('${t.id}')">Delete</button></div></div><div id="edit-form-${t.id}" class="edit-form"><h4>Edit ${escapeHtml(t.name)}</h4><input type="text" id="edit-name-${t.id}" value="${escapeHtml(t.name)}"><input type="text" id="edit-designation-${t.id}" value="${escapeHtml(t.designation)}"><input type="text" id="edit-phone-${t.id}" value="${escapeHtml(t.phone || "")}"><input type="text" id="edit-photo-url-${t.id}" value="${escapeHtml(t.photo || "")}" placeholder="Image URL"><input type="file" id="edit-photo-file-${t.id}" accept="image/*"><button class="btn" onclick="updateTeacherItem('${t.id}')">Update</button></div>`).join("")}</div></div></div><div id="notices-tab" class="admin-section"><div class="admin-card"><h3>Add New Notice</h3><button id="showAddNoticeForm" class="btn btn-sm" style="margin-bottom:1rem;">+ Show Form</button><div id="addNoticeForm" class="edit-form"><input type="text" id="noticeTitle" placeholder="Title"><textarea id="noticeDesc" rows="2" placeholder="Description"></textarea><input type="file" id="noticeImage" accept="image/*"><input type="date" id="noticeDate"><button id="addNoticeBtn" class="btn">Save Notice</button></div></div><div class="admin-card"><h3>Current Notices</h3><div id="noticeList">${globalData.notices.map((n) => `<div class="item-card"><div><strong>${escapeHtml(n.title)}</strong><br><small>${n.date}</small></div><div><button class="edit-btn" onclick="editNotice('${n.id}')">Edit</button><button class="delete-btn" onclick="deleteNoticeItem('${n.id}')">Delete</button></div></div><div id="edit-notice-form-${n.id}" class="edit-form"><h4>Edit Notice</h4><input type="text" id="edit-notice-title-${n.id}" value="${escapeHtml(n.title)}"><textarea id="edit-notice-desc-${n.id}" rows="2">${escapeHtml(n.description)}</textarea><input type="file" id="edit-notice-image-${n.id}" accept="image/*"><input type="date" id="edit-notice-date-${n.id}" value="${n.date}"><button class="btn" onclick="updateNoticeItem('${n.id}')">Update</button></div>`).join("")}</div></div></div><div id="gallery-tab" class="admin-section"><div class="admin-card"><h3>Add New Image</h3><button id="showAddImageForm" class="btn btn-sm" style="margin-bottom:1rem;">+ Show Form</button><div id="addImageForm" class="edit-form"><input type="file" id="galleryFileUpload" accept="image/*"><input type="text" id="galleryTitle" placeholder="Image Title"><button id="addGalleryBtn" class="btn">Upload</button></div></div><div class="admin-card"><h3>Gallery Items</h3><div id="galleryList">${globalData.gallery.map((img) => `<div class="item-card"><div><img src="${img.url}" style="width:40px;height:40px;object-fit:cover;border-radius:8px;"> <strong>${escapeHtml(img.title)}</strong></div><div><button class="edit-btn" onclick="editGallery('${img.id}')">Edit</button><button class="delete-btn" onclick="deleteGalleryItemConfirm('${img.id}')">Delete</button></div></div><div id="edit-gallery-form-${img.id}" class="edit-form"><input type="text" id="edit-gallery-title-${img.id}" value="${escapeHtml(img.title)}"><button class="btn" onclick="updateGalleryItemConfirm('${img.id}')">Update Title</button></div>`).join("")}</div></div></div><div id="ratings-tab" class="admin-section"><div class="admin-card"><h3>Manage User Ratings (${globalData.ratings.length})</h3><div id="ratingsList">${globalData.ratings.map((r) => `<div class="item-card"><div><strong>${escapeHtml(r.name)}</strong>: ${escapeHtml(r.review.substring(0, 50))}${r.review.length > 50 ? "..." : ""}</div><button class="delete-btn" onclick="deleteRatingItem('${r.id}')">Delete</button></div>`).join("") || "<p>No ratings yet.</p>"}</div><button id="deleteAllRatingsBtn" class="btn" style="background:#b91c1c; margin-top:1rem;">Delete All Ratings</button></div></div><div id="footer-tab" class="admin-section"><div class="admin-card"><h3>Footer Text</h3><textarea id="footerEdit" rows="3" style="width:100%; border-radius:20px;">${escapeHtml(footerContent)}</textarea><button id="saveFooterBtn" class="btn" style="margin-top:1rem;">Update Footer</button></div></div></div>`;
       }
 
       function renderFooter() {
-        return `<footer class="premium-footer"><div class="footer-content"><div class="footer-brand"><h3>Album of RCS</h3><p>${escapeHtml(footerContent)}</p></div><div class="footer-social"><a href="mailto:albumofrcs@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a><a href="https://instagram.com/albumofrcs" target="_blank"><i class="fab fa-instagram"></i></a><a href="https://facebook.com/albumofrcs" target="_blank"><i class="fab fa-facebook-f"></i></a></div></div><div class="footer-bottom"><p>Website by <a href="https://instagram.com/tamimiq" target="_blank">Tamim Iqbal</a></p></div></footer>`;
+        return `<footer class="premium-footer"><div class="footer-content"><div class="footer-brand"><h3>Album of RCS</h3><p>${escapeHtml(footerContent)}</p></div><div class="footer-social"><a href="mailto:albumofrcs@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a><a href="https://instagram.com/albumofrcs" target="_blank"><i class="fab fa-instagram"></i></a><a href="https://facebook.com/albumofrcs" target="_blank"><i class="fab fa-facebook-f"></i></a></div></div><div class="footer-bottom"><p>Website by <a href="https://instagram.com/tamimiq_" target="_blank">Tamim Iqbal</a></p></div></footer>`;
       }
 
-      window.copyToClipboard = copyToClipboard;
+      function escapeHtml(str) {
+        return String(str).replace(/[&<>]/g, (m) =>
+          m === "&" ? "&amp;" : m === "<" ? "&lt;" : "&gt;",
+        );
+      }
+
+      // Global functions for admin
       window.editTeacher = (id) => {
         document.getElementById(`edit-form-${id}`)?.classList.toggle("show");
       };
       window.updateTeacherItem = async (id) => {
-        let name = document.getElementById(`edit-name-${id}`).value,
-          des = document.getElementById(`edit-designation-${id}`).value,
-          phone = document.getElementById(`edit-phone-${id}`).value,
-          url = document.getElementById(`edit-photo-url-${id}`).value,
-          file = document.getElementById(`edit-photo-file-${id}`).files[0],
-          photo = url;
+        let name = document.getElementById(`edit-name-${id}`).value;
+        let des = document.getElementById(`edit-designation-${id}`).value;
+        let phone = document.getElementById(`edit-phone-${id}`).value;
+        let url = document.getElementById(`edit-photo-url-${id}`).value;
+        let file = document.getElementById(`edit-photo-file-${id}`).files[0];
+        let photo = url;
         if (file) photo = await fileToBase64(file);
         updateTeacher(id, { name, designation: des, phone, photo });
       };
       window.deleteTeacherItem = (id) => {
-        if (confirm("Delete this teacher?")) deleteTeacher(id);
+        if (confirm("Delete?")) deleteTeacher(id);
       };
       window.editNotice = (id) => {
         document
@@ -1454,37 +1507,39 @@
           ?.classList.toggle("show");
       };
       window.updateNoticeItem = async (id) => {
-        let title = document.getElementById(`edit-notice-title-${id}`).value,
-          desc = document.getElementById(`edit-notice-desc-${id}`).value,
-          date = document.getElementById(`edit-notice-date-${id}`).value,
-          file = document.getElementById(`edit-notice-image-${id}`).files[0],
-          image = "";
+        let title = document.getElementById(`edit-notice-title-${id}`).value;
+        let desc = document.getElementById(`edit-notice-desc-${id}`).value;
+        let date = document.getElementById(`edit-notice-date-${id}`).value;
+        let file = document.getElementById(`edit-notice-image-${id}`).files[0];
+        let image = "";
         if (file) image = await fileToBase64(file);
         updateNotice(id, { title, description: desc, date, image });
       };
       window.deleteNoticeItem = (id) => {
-        if (confirm("Delete this notice?")) deleteNotice(id);
+        if (confirm("Delete?")) deleteNotice(id);
       };
       window.editGallery = (id) => {
         document
           .getElementById(`edit-gallery-form-${id}`)
           ?.classList.toggle("show");
       };
-      window.updateGalleryItem = async (id) => {
+      window.updateGalleryItemConfirm = async (id) => {
         let title = document.getElementById(`edit-gallery-title-${id}`).value;
         updateGalleryItem(id, { title });
       };
       window.deleteGalleryItemConfirm = (id) => {
-        if (confirm("Delete this image?")) deleteGalleryItem(id);
+        if (confirm("Delete?")) deleteGalleryItem(id);
       };
       window.deleteRatingItem = (id) => {
-        if (confirm("Delete this rating?")) deleteRating(id);
+        if (confirm("Delete?")) deleteRating(id);
       };
+      window.copyToClipboard = copyToClipboard;
+      window.showFullImage = showFullImage;
+      window.closeModal = closeModal;
+      window.navigate = navigate;
 
       function render() {
-        if (isLoading) {
-          return;
-        }
+        if (isLoading) return;
         let mainContent = "";
         if (currentRoute === "home") mainContent = renderHome();
         else if (currentRoute === "about") mainContent = renderAbout();
@@ -1492,17 +1547,12 @@
         else if (currentRoute === "teachers") mainContent = renderTeachers();
         else if (currentRoute === "notices") mainContent = renderNotices();
         else if (currentRoute === "ratings") mainContent = renderRatings();
-        else if (currentRoute === "admin") mainContent = renderAdmin();
         else mainContent = renderHome();
-        const fullHTML = `<nav class="navbar"><div class="nav-container"><div class="logo"><h2>Album of RCS</h2></div><div class="menu-icon" id="menuToggle"><i class="fas fa-bars"></i></div><ul class="nav-links" id="navLinks"><li><a href="#" onclick="navigate('home');return false;">Home</a></li><li><a href="#" onclick="navigate('about');return false;">About</a></li><li><a href="#" onclick="navigate('nostalgia');return false;">Nostalgia</a></li><li><a href="#" onclick="navigate('teachers');return false;">Teachers</a></li><li><a href="#" onclick="navigate('notices');return false;">Notices</a></li><li><a href="#" onclick="navigate('ratings');return false;">Ratings</a></li></ul></div></nav><div class="container main-content">${mainContent}</div>${renderFooter()}<div id="imageModal" class="image-modal" onclick="closeModal()"><span class="close-modal">&times;</span><img id="modalImage" class="modal-img" src=""></div>`;
-        document.getElementById("app").innerHTML = fullHTML;
-        attachGlobalHandlers();
-        attachAdminHandlers();
-        attachNoticeToggle();
-        toggleMobileMenu();
-      }
 
-      function attachNoticeToggle() {
+        const fullHTML = `<nav class="navbar"><div class="nav-container"><div class="logo"><h2>Album of RCS</h2></div><div class="menu-icon" id="menuToggle"><i class="fas fa-bars"></i></div><ul class="nav-links" id="navLinks"><li><a href="#" onclick="navigate('home');return false;">Home</a></li><li><a href="#" onclick="navigate('about');return false;">About</a></li><li><a href="#" onclick="navigate('nostalgia');return false;">Nostalgia</a></li><li><a href="#" onclick="navigate('teachers');return false;">Teachers</a></li><li><a href="#" onclick="navigate('notices');return false;">Notices</a></li><li><a href="#" onclick="navigate('ratings');return false;">Ratings</a></li>${adminLogged ? `<li><a href="#" onclick="navigate('admin');return false;">Admin</a></li>` : ""}</ul></div></nav><div class="container main-content">${mainContent}</div>${renderFooter()}<div id="imageModal" class="image-modal" onclick="closeModal()"><span class="close-modal">&times;</span><img id="modalImage" class="modal-img" src=""></div>`;
+        document.getElementById("app").innerHTML = fullHTML;
+
+        // Attach event handlers
         document.querySelectorAll(".notice-card").forEach((card) => {
           card.addEventListener("click", (e) => {
             if (e.target.classList.contains("notice-img")) return;
@@ -1510,28 +1560,28 @@
             if (detail) detail.classList.toggle("show");
           });
         });
-      }
-      function attachGlobalHandlers() {
+
         let rf = document.getElementById("reviewForm");
         if (rf) {
           rf.onsubmit = (e) => {
             e.preventDefault();
-            let name = document.getElementById("revName").value,
-              school = document.getElementById("revSchool").value,
-              batch = document.getElementById("revBatch").value,
-              email = document.getElementById("revEmail").value,
-              review = document.getElementById("revReview").value;
+            let name = document.getElementById("revName").value;
+            let school = document.getElementById("revSchool").value;
+            let batch = document.getElementById("revBatch").value;
+            let email = document.getElementById("revEmail").value;
+            let review = document.getElementById("revReview").value;
             if (!name || !review) return alert("Name and review required.");
             addRating({ name, school, batch, email, review });
             rf.reset();
           };
         }
+
         let alf = document.getElementById("adminLoginForm");
         if (alf) {
           alf.onsubmit = (e) => {
             e.preventDefault();
-            let email = document.getElementById("adminEmail").value,
-              pass = document.getElementById("adminPass").value;
+            let email = document.getElementById("adminEmail").value;
+            let pass = document.getElementById("adminPass").value;
             let result = adminLogin(email, pass);
             if (result.success) render();
             else
@@ -1539,121 +1589,140 @@
                 result.message;
           };
         }
+
         let lob = document.getElementById("logoutAdminBtn");
         if (lob) lob.onclick = () => adminLogout();
-      }
-      function attachAdminHandlers() {
-        if (!adminLogged) return;
-        document.querySelectorAll(".admin-tab").forEach((tab) => {
-          tab.addEventListener("click", (e) => {
-            e.preventDefault();
-            document
-              .querySelectorAll(".admin-tab")
-              .forEach((t) => t.classList.remove("active"));
-            tab.classList.add("active");
-            document
-              .querySelectorAll(".admin-section")
-              .forEach((s) => s.classList.remove("active"));
-            document.getElementById(tab.dataset.tab).classList.add("active");
-          });
-        });
-        document
-          .getElementById("saveHomeBtn")
-          ?.addEventListener("click", () => {
-            setHomeContent(document.getElementById("homeEditArea").value);
-          });
-        document
-          .getElementById("saveAboutBtn")
-          ?.addEventListener("click", () => {
-            setAboutContent(document.getElementById("aboutEditArea").value);
-          });
-        document
-          .getElementById("saveFooterBtn")
-          ?.addEventListener("click", () => {
-            setFooterContent(document.getElementById("footerEdit").value);
-          });
-        document
-          .getElementById("showAddTeacherForm")
-          ?.addEventListener("click", () => {
-            document.getElementById("addTeacherForm").classList.toggle("show");
-          });
-        document
-          .getElementById("addTeacherBtn")
-          ?.addEventListener("click", async () => {
-            let name = document.getElementById("teacherName").value,
-              des = document.getElementById("teacherDesignation").value,
-              phone = document.getElementById("teacherPhone").value,
-              url = document.getElementById("teacherPhotoUrl").value,
-              file = document.getElementById("teacherPhotoUpload").files[0],
-              photo = "https://randomuser.me/api/portraits/lego/1.jpg";
-            if (file) photo = await fileToBase64(file);
-            else if (url) photo = url;
-            addTeacher({ name, designation: des, phone, photo });
-            document.getElementById("addTeacherForm").classList.remove("show");
-            document.getElementById("teacherName").value = "";
-            document.getElementById("teacherDesignation").value = "";
-            document.getElementById("teacherPhone").value = "";
-            document.getElementById("teacherPhotoUrl").value = "";
-            document.getElementById("teacherPhotoUpload").value = "";
-          });
-        document
-          .getElementById("showAddNoticeForm")
-          ?.addEventListener("click", () => {
-            document.getElementById("addNoticeForm").classList.toggle("show");
-          });
-        document
-          .getElementById("addNoticeBtn")
-          ?.addEventListener("click", async () => {
-            let title = document.getElementById("noticeTitle").value,
-              desc = document.getElementById("noticeDesc").value,
-              date = document.getElementById("noticeDate").value,
-              file = document.getElementById("noticeImage").files[0],
-              image = "";
-            if (file) image = await fileToBase64(file);
-            addNotice({
-              title,
-              description: desc,
-              image,
-              date: date || new Date().toISOString().slice(0, 10),
+
+        // Admin panel handlers
+        if (adminLogged) {
+          document.querySelectorAll(".admin-tab").forEach((tab) => {
+            tab.addEventListener("click", (e) => {
+              document
+                .querySelectorAll(".admin-tab")
+                .forEach((t) => t.classList.remove("active"));
+              tab.classList.add("active");
+              document
+                .querySelectorAll(".admin-section")
+                .forEach((s) => s.classList.remove("active"));
+              document.getElementById(tab.dataset.tab).classList.add("active");
             });
-            document.getElementById("addNoticeForm").classList.remove("show");
-            document.getElementById("noticeTitle").value = "";
-            document.getElementById("noticeDesc").value = "";
-            document.getElementById("noticeImage").value = "";
-            document.getElementById("noticeDate").value = "";
           });
-        document
-          .getElementById("showAddImageForm")
-          ?.addEventListener("click", () => {
-            document.getElementById("addImageForm").classList.toggle("show");
-          });
-        document
-          .getElementById("addGalleryBtn")
-          ?.addEventListener("click", async () => {
-            let file = document.getElementById("galleryFileUpload").files[0],
-              title = document.getElementById("galleryTitle").value;
-            if (!file) return alert("Select an image");
-            let url = await fileToBase64(file);
-            addGalleryItem({ url, title: title || "Memory" });
-            document.getElementById("addImageForm").classList.remove("show");
-            document.getElementById("galleryFileUpload").value = "";
-            document.getElementById("galleryTitle").value = "";
-          });
-        document
-          .getElementById("deleteAllRatingsBtn")
-          ?.addEventListener("click", async () => {
-            if (confirm("Delete all ratings?")) deleteAllRatings();
-          });
-      }
-      function toggleMobileMenu() {
+          document
+            .getElementById("saveHomeBtn")
+            ?.addEventListener("click", () =>
+              setHomeContent(document.getElementById("homeEditArea").value),
+            );
+          document
+            .getElementById("saveAboutBtn")
+            ?.addEventListener("click", () =>
+              setAboutContent(document.getElementById("aboutEditArea").value),
+            );
+          document
+            .getElementById("saveFooterBtn")
+            ?.addEventListener("click", () =>
+              setFooterContent(document.getElementById("footerEdit").value),
+            );
+          document
+            .getElementById("showAddTeacherForm")
+            ?.addEventListener("click", () =>
+              document
+                .getElementById("addTeacherForm")
+                .classList.toggle("show"),
+            );
+          document
+            .getElementById("addTeacherBtn")
+            ?.addEventListener("click", async () => {
+              let name = document.getElementById("teacherName").value;
+              let des = document.getElementById("teacherDesignation").value;
+              let phone = document.getElementById("teacherPhone").value;
+              let url = document.getElementById("teacherPhotoUrl").value;
+              let file = document.getElementById("teacherPhotoUpload").files[0];
+              let photo = "https://randomuser.me/api/portraits/lego/1.jpg";
+              if (file) photo = await fileToBase64(file);
+              else if (url) photo = url;
+              addTeacher({ name, designation: des, phone, photo });
+              document
+                .getElementById("addTeacherForm")
+                .classList.remove("show");
+              document.getElementById("teacherName").value = "";
+              document.getElementById("teacherDesignation").value = "";
+              document.getElementById("teacherPhone").value = "";
+              document.getElementById("teacherPhotoUrl").value = "";
+              document.getElementById("teacherPhotoUpload").value = "";
+            });
+          document
+            .getElementById("showAddNoticeForm")
+            ?.addEventListener("click", () =>
+              document.getElementById("addNoticeForm").classList.toggle("show"),
+            );
+          document
+            .getElementById("addNoticeBtn")
+            ?.addEventListener("click", async () => {
+              let title = document.getElementById("noticeTitle").value;
+              let desc = document.getElementById("noticeDesc").value;
+              let date = document.getElementById("noticeDate").value;
+              let file = document.getElementById("noticeImage").files[0];
+              let image = "";
+              if (file) image = await fileToBase64(file);
+              addNotice({
+                title,
+                description: desc,
+                image,
+                date: date || new Date().toISOString().slice(0, 10),
+              });
+              document.getElementById("addNoticeForm").classList.remove("show");
+              document.getElementById("noticeTitle").value = "";
+              document.getElementById("noticeDesc").value = "";
+              document.getElementById("noticeImage").value = "";
+              document.getElementById("noticeDate").value = "";
+            });
+          document
+            .getElementById("showAddImageForm")
+            ?.addEventListener("click", () =>
+              document.getElementById("addImageForm").classList.toggle("show"),
+            );
+          document
+            .getElementById("addGalleryBtn")
+            ?.addEventListener("click", async () => {
+              let file = document.getElementById("galleryFileUpload").files[0];
+              let title = document.getElementById("galleryTitle").value;
+              if (!file) return alert("Select an image");
+              let url = await fileToBase64(file);
+              addGalleryItem({ url, title: title || "Memory" });
+              document.getElementById("addImageForm").classList.remove("show");
+              document.getElementById("galleryFileUpload").value = "";
+              document.getElementById("galleryTitle").value = "";
+            });
+          document
+            .getElementById("deleteAllRatingsBtn")
+            ?.addEventListener("click", () => {
+              if (confirm("Delete all ratings?")) deleteAllRatings();
+            });
+        }
+
         let toggle = document.getElementById("menuToggle");
         if (toggle)
           toggle.onclick = () =>
             document.getElementById("navLinks").classList.toggle("show");
       }
 
-      // Start the app
-      initBack4App();
+      function finishLoading() {
+        isLoading = false;
+        render();
+        const overlay = document.getElementById("loadingOverlay");
+        if (overlay) {
+          overlay.classList.add("hide");
+          setTimeout(() => {
+            overlay.style.display = "none";
+          }, 500);
+        }
+      }
+
+      async function initApp() {
+        console.log("🚀 অ্যাপ স্টার্ট হচ্ছে...");
+        await loadFromJSONBin();
+      }
+      initApp();
     </script>
   </body>
 </html>
